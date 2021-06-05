@@ -2,6 +2,7 @@ import * as React from "react"
 import * as katex from "katex"
 
 interface Props {
+    block?: boolean
     content: string
 }
 
@@ -11,11 +12,15 @@ interface Props {
  *
  * Warning: Doesn't sanitize against XSS, so do not render user inputs
  */
-export const MathDisplay = ({ content }: Props) => {
+export const MathDisplay = ({ block = false, content }: Props) => {
     const renderedContent = React.useMemo(
         () => katex.renderToString(content),
         [content]
     )
 
-    return <div dangerouslySetInnerHTML={{ __html: renderedContent }} />
+    if (block) {
+        return <div dangerouslySetInnerHTML={{ __html: renderedContent }} />
+    }
+
+    return <span dangerouslySetInnerHTML={{ __html: renderedContent }} />
 }

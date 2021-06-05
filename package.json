@@ -12,7 +12,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint . --ext .ts"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -30,7 +31,11 @@
   },
   "devDependencies": {
     "@types/katex": "^0.11.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
     "eslint": "^7.28.0",
-    "prettier": "^2.3.0"
+    "eslint-plugin-react": "^7.24.0",
+    "prettier": "^2.3.0",
+    "typescript": "^4.3.2"
   }
 }
