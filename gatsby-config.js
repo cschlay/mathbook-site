@@ -11,7 +11,12 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        extensions: [".mdx"],
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -21,4 +26,4 @@ module.exports = {
       __key: "pages",
     },
   ],
-};
+}

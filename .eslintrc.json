@@ -1,0 +1,19 @@
+{
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": ["warn", 4],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["warn", "double"],
+    "semi": ["warn"],
+    "no-await-in-loop": "error",
+    "no-loss-of-precision": "error",
+    "require-atomic-updates": "error",
+    "curly": "error",
+    "no-else-return": ["error", { "allowElseIf": false }],
+    "no-empty-function": "warn",
+    "no-empty-pattern": "warn",
+    "no-magic-numbers": "warn",
+    "no-ternary": "error",
+    "sort-imports": "warn"
+  }
+}
