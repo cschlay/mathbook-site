@@ -6,11 +6,9 @@
     "plugin:react/recommended"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint"],
   "rules": {
-    "indent": ["warn", 4],
+    "indent": ["warn", 2],
     "linebreak-style": ["error", "unix"],
     "quotes": ["warn", "double"],
     "semi": "off",
