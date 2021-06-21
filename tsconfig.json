@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
     "module": "ES2020",
-    "noImplicitAny": true,
+    "moduleResolution": "Node",
+    "noImplicitAny": false,
     "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true
   }
 }

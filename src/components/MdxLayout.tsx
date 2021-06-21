@@ -6,6 +6,8 @@ interface Props {
     children: React.ReactChildren
 }
 
-export default ({ children }: Props) => (
+const MdxLayout = ({ children }: Props) => (
     <MDXProvider components={{ Definition }}>{children}</MDXProvider>
 )
+
+export default MdxLayout

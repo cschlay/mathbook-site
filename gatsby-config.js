@@ -33,5 +33,12 @@ module.exports = {
             },
             __key: "pages",
         },
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "maths",
+                path: "./src/components/",
+            },
+        },
     ],
 }

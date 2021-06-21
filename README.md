@@ -35,4 +35,5 @@ yarn dev
 
 ## Notes
 
+* `remark-math` version `3.0.1` works with Gatsby but doesn't work with `react-markdown`
 * `remark-math` version `4.0.0` doesn't work with current Gatsby version
