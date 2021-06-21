@@ -15,7 +15,10 @@ module.exports = {
         {
             resolve: "gatsby-plugin-mdx",
             options: {
-                gatsbyRemarkPlugins: ["gatsby-remark-katex"],
+                defaultLayouts: {
+                    // eslint-disable-next-line no-undef
+                    default: require.resolve("./src/components/MdxLayout.tsx"),
+                },
                 // eslint-disable-next-line no-undef
                 remarkPlugins: [require("remark-math")],
                 // eslint-disable-next-line no-undef
