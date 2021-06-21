@@ -15,7 +15,11 @@ module.exports = {
         {
             resolve: "gatsby-plugin-mdx",
             options: {
-                extensions: [".mdx"],
+                gatsbyRemarkPlugins: ["gatsby-remark-katex"],
+                // eslint-disable-next-line no-undef
+                remarkPlugins: [require("remark-math")],
+                // eslint-disable-next-line no-undef
+                rehypePlugins: [require("rehype-katex")],
             },
         },
         {

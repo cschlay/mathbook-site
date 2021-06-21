@@ -32,3 +32,7 @@ Install latest Node.js and yarn.
 yarn install --dev
 yarn dev
 ```
+
+## Notes
+
+* `remark-math` version `4.0.0` doesn't work with current Gatsby version
