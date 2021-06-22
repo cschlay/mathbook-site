@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Definition } from "./MathDisplay/Definition"
+import { Example } from "./MathDisplay/Example"
 import { MDXProvider } from "@mdx-js/react"
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
 }
 
 const MdxLayout = ({ children }: Props) => (
-    <MDXProvider components={{ Definition }}>{children}</MDXProvider>
+    <MDXProvider components={{ Definition, Example }}>{children}</MDXProvider>
 )
 
 export default MdxLayout

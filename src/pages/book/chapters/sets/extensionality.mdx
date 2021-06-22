@@ -19,3 +19,28 @@ All that matters are what its elements are.
 <Definition name="Extensionality">
     If $A$ and $B$ are sets, then $A = B$ if and only if every element of $A$ is also an element of $B$, and vice versa.
 </Definition>
+
+In general, when we have objects $a_1, \ldots, a_n$, then $\{a_1, \ldots, a_n\}$ is the set $S$ whose elements are $a_1, \ldots, a_n$.
+There can be only one such set:
+
+$$
+    S = \{ a, a, b \} = \{ a, b \} = \{ b, a \}.
+$$
+
+We usually don't write out duplicate elements since they have no meaning as extensionality reduces them to same set.
+
+<Example name="Color Palette">
+    {"Colors used in a website design can be thought as a set $S = \\{blue, green, orange\\}$. Choosing another blue of same tone is still same blue. If two websites use same colors, they use same set of colors."}
+</Example>
+
+In practice, sets can be used to check if something exists in something e.g. if a recipe for cake contains milk or not.
+The ingredient listing in consumable products usually don't show quantity, so they can be represented as a set.
+
+```python
+cake: set = { "flour", "milk", "butter" }
+
+def contains_dairy(ingredients: set):
+    return "milk" in ingredients or "butter" in ingredients
+```
+
+Usually in programming using lists would suffice as well, but you can save memory by using sets.

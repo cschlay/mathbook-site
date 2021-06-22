@@ -8,7 +8,7 @@ interface Props {
     name?: string
 }
 
-export const Definition = ({ children, name }: Props) => {
+export const Example = ({ children, name }: Props) => {
     return (
         <div
             style={{
@@ -16,7 +16,7 @@ export const Definition = ({ children, name }: Props) => {
                 padding: "0.5rem 1rem",
             }}
         >
-            <b>Definition{name && ` (${name})`}.</b>{" "}
+            <b>Example{name && ` (${name})`}.</b>{" "}
             <ReactMarkdown
                 remarkPlugins={[remarkMath]}
                 rehypePlugins={[rehypeKatex]}
