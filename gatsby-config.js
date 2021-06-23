@@ -23,6 +23,26 @@ module.exports = {
                 remarkPlugins: [require("remark-math")],
                 // eslint-disable-next-line no-undef
                 rehypePlugins: [require("rehype-katex")],
+                gatsbyRemarkPlugins: [
+                    {
+                        // https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/
+                        resolve: `gatsby-remark-prismjs`,
+                        options: {
+                            classPrefix: "language-",
+                            inlineCodeMarker: null,
+                            aliases: {},
+                            showLineNumbers: true,
+                            noInlineHighlight: false,
+                            languageExtensions: [],
+                            prompt: {
+                                user: "laych",
+                                host: "dev",
+                                global: true,
+                            },
+                            escapeEntities: {},
+                        },
+                    },
+                ],
             },
         },
         {

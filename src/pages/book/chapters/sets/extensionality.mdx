@@ -1,7 +1,8 @@
 ---
 title: Extensionality
----
 
+
+---
 
 <!--This file contains text from Open Logic Project, used under CC BY 4.0. License.
 Content is modified to fit computer science approach, see README.md-->
@@ -31,18 +32,52 @@ $$
 
 We usually don't write out duplicate elements since they have no meaning as extensionality reduces them to same set.
 
-<Example name="Color Palette">
-    {"Colors used in a website design can be thought as a set $S = \\{blue, green, orange\\}$. Choosing another blue of same tone is still same blue. If two websites use same colors, they use same set of colors."}
+<Example name="Color palette">
+    <p>
+        Colors used in a website design can be thought as a set <Tex math="S = \{blue, green, orange\}"/>.
+        Choosing another blue of same tone is still same blue.
+        If two websites use same colors, they use same set of colors.
+    </p>
 </Example>
 
 In practice, sets can be used to check if something exists in something e.g. if a recipe for cake contains milk or not.
 The ingredient listing in consumable products usually don't show quantity, so they can be represented as a set.
 
 ```python
-cake: set = { "flour", "milk", "butter" }
-
-def contains_dairy(ingredients: set):
+def contains_dairy(ingredients: set[str]) -> bool:
     return "milk" in ingredients or "butter" in ingredients
+
+print(contains_dairy({ "flour", "milk", "butter" }))
+# True
 ```
 
-Usually in programming using lists would suffice as well, but you can save memory by using sets.
+<!-- SOURCE: OLP -->
+Frequently we’ll specify a set by some property that its elements share.
+We’ll use the following shorthand notation for that: $\{x \mid f(x)\}$, where the
+$f(x)$ stands for the property that $x$ has to have in order to be counted among
+the elements of the set. The property can be thought as a function that generate the elements.
+<!-- END SOURCE: OLP -->
+
+<Example name="Generating serving sizes">
+    <p>
+        We want serve potatoes to our guests.
+        It is decided to serve them in multiples of <Tex math="1.5"/> where base amount is <Tex math="100\text{ g}"/>.
+        But no more than <Tex math="500\text{ g}"/>. To generate all sizes we could specify:
+    </p>
+    <Tex math="S = \{ x \mid x \cdot 1.5 \le 500 \} = \{ 150, 225, 337.5 \}." block/>
+</Example>
+
+In programming, it is useful to generate values that follow certain rules. Were we writing a program of the previous example
+to make it possible to calculate servings for any other foods, the program would look like
+
+```python
+def calculate_serving_sizes(base_amount: float, multiplier: float, max_amount: float) -> set[float]:
+    return { base_amount * multiplier ** i for i in range(1, 10) if base_amount * multiplier ** i <= max_amount}
+
+print(calculate_serving_sizes(100, 1.5, 500))
+# {337.5, 225.0, 150.0}
+```
+
+This kind of notation is called [_set comprehension_](https://en.wikipedia.org/wiki/Set-builder_notation).
+Typical use cases may be related to business logic where certain values need to be generated e.g. price classes.
+The notation in programming languages tend to get longer and more complex than in math so use it only for simple cases.

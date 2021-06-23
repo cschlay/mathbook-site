@@ -1,7 +1,4 @@
 import * as React from "react"
-import ReactMarkdown from "react-markdown"
-import rehypeKatex from "rehype-katex"
-import remarkMath from "remark-math4"
 
 interface Props {
     children: string
@@ -16,13 +13,7 @@ export const Example = ({ children, name }: Props) => {
                 padding: "0.5rem 1rem",
             }}
         >
-            <b>Example{name && ` (${name})`}.</b>{" "}
-            <ReactMarkdown
-                remarkPlugins={[remarkMath]}
-                rehypePlugins={[rehypeKatex]}
-            >
-                {children}
-            </ReactMarkdown>
+            <b>Example{name && ` (${name})`}.</b> {children}
         </div>
     )
 }

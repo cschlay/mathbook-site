@@ -3,7 +3,7 @@ import * as katex from "katex"
 
 interface Props {
     block?: boolean
-    content: string
+    math: string
 }
 
 /**
@@ -12,14 +12,21 @@ interface Props {
  *
  * Warning: Doesn't sanitize against XSS, so do not render user inputs
  */
-export const MathDisplay = ({ block = false, content }: Props) => {
+export const MathDisplay = ({ block = false, math }: Props) => {
     const renderedContent = React.useMemo(
-        () => katex.renderToString(content),
-        [content]
+        () => katex.renderToString(math),
+        [math]
     )
 
     if (block) {
-        return <div dangerouslySetInnerHTML={{ __html: renderedContent }} />
+        return (
+            <div className="math math-display">
+                <div
+                    className="katex-display"
+                    dangerouslySetInnerHTML={{ __html: renderedContent }}
+                />
+            </div>
+        )
     }
 
     return <span dangerouslySetInnerHTML={{ __html: renderedContent }} />
