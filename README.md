@@ -1,5 +1,7 @@
 # Mathbook Project
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5fb1915b-b313-4dfd-8019-fe27c00824ce/deploy-status)](https://app.netlify.com/sites/mathbook/deploys)
+
 This repository contains the frontend and most of the text content files. The backend repository is at https://github.com/cschlay/mathbook.
 
 ## Attributions
