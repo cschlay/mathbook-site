@@ -5,16 +5,27 @@ This repository contains the frontend and most of the text content files. The ba
 ## Attributions
 
 This project is based on open source and public mathematics textbooks.
-The source is always explicitly mentioned since multiple sources exists.
+The source is always explicitly mentioned since multiple sources exists, they are marked in `.mdx` as 
 
-### Open Logic Project
+```html
+<!-- This file contains text from Open Logic Project, used under CC BY 4.0. License.
+Content is modified to fit computer science approach, see README.md -->
+
+<!-- SOURCE: OLP -->
+Text that is directly used under the terms of license. Modifications are included.
+<!-- END SOURCE: OLP -->
+```
+
+Any text without attributions is original to this project.
+
+### Open Logic Project (OLP)
 
 This project uses texts provided by [Open Logic Project](https://openlogicproject.org/about/
 ) which is used under [CC BY 4.0. license](https://creativecommons.org/licenses/by/4.0/).
 Texts have been changed to embed the material into the software and modified to fit with other texts.
 
-* The changes are made to embed the material into Python code.
-* Some parts of the texts have been modified, combined with other sources, or not included in the project.
+* The changes are made to embed the material into TypeScript code and Markdown.
+* Some parts of the texts have been modified, combined with other sources, or not included in the project. The goal is to make it more fit for computer science.
 
 The primary version used is http://builds.openlogicproject.org/open-logic-debug.pdf.
 
