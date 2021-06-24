@@ -1,0 +1,61 @@
+---
+title: Subsets and Power Sets
+---
+
+<!--This file contains text from Open Logic Project, used under CC BY 4.0. License.
+Content is modified to fit computer science approach, see README.md-->
+
+<!-- SOURCE: OLP -->
+
+We will often want to compare sets. One kind of comparison is: _everything in one set is in the other (set) too_.
+This situation is sufficiently important for us to introduce some new notation.
+
+<Definition name="Subset">
+    If every element of a set <Tex math="A"/> is also an element of <Tex math="B" />,
+    then we say that <Tex math="A"/> is a <em>subset</em> of <Tex math="B"/>, and we write <Tex math="A \subseteq B"/>.
+    If <Tex math="A \subseteq B" /> but <Tex math="A \neq B" />,
+    we write <Tex math="A \subset B" />,
+    and say that <Tex math="A" /> is a <em>proper subset</em> of <Tex math="B" />.
+</Definition>
+
+<!-- END SOURCE: OLP -->
+
+The notation $\subset$ is used because they are similar to equality operators $\leq$ and $<$. You may also see $\subsetneq$ in other literature.
+
+<!-- SOURCE: OLP -->
+
+<Example name="Basics">
+    Every set is a subset of itself, and <Tex math="\emptyset"/> is a subset of every set.
+    The set of even numbers is a subset of the set of natural numbers. Also <Tex math="\{a,b\} \subseteq \{a,b,c\}"/>. But <Tex math="\{a,b,e\}" /> is not a subset of <Tex math="\{a,b,c\}"/>.
+</Example>
+
+<!-- END SOURCE: OLP -->
+
+Applying subsets is useful for check validity of something such as that a customer have chosen
+appropriate combination of items. Or to check that surgery has sanitized tools, each tool has unique id.
+
+<Example name="Pizza toppings">
+    All pizza toppings are a set <Tex math="A = \{ \text{ham}, \text{kebab}, \text{mozzarella}, \text{tomato} \}"/>.
+    Choosing any subset of toppings would result in a pizza that have name ham pizza, mozzarella pizza etc.
+    A kebab pizza would be a proper subset <Tex math="B = \{ \text{kebab}, \text{mozzarella} \}" />, so <Tex math="B \subset A" />.
+</Example>
+
+In Python the example would be written as
+
+```python
+pizza_toppings: set[str] = { "ham", "kebab", "mozzarella", "tomato" }
+kebab_pizza: set[str] = { "kebab", "mozzarella" }
+
+print(kebab_pizza.issubset(pizza_toppings))
+# True
+```
+
+<!-- SOURCE: OLP -->
+
+<Proposition>
+    <Tex math="A = B" /> iff both <Tex math="A \subseteq B"/> and <Tex math="B \subseteq A" />.
+</Proposition>
+
+<!-- END SOURCE: OLP -->
+
+Try to reason why the above proposition is valid, the answer can be found in Open Logic Project book.

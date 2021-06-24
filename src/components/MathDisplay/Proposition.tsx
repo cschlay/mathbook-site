@@ -1,14 +1,11 @@
 import * as React from "react"
-import ReactMarkdown from "react-markdown"
-import rehypeKatex from "rehype-katex"
-import remarkMath from "remark-math4"
 
 interface Props {
     children: string
     name?: string
 }
 
-export const Definition = ({ children, name }: Props) => {
+export const Proposition = ({ children, name }: Props) => {
     return (
         <div
             style={{
@@ -16,7 +13,7 @@ export const Definition = ({ children, name }: Props) => {
                 padding: "0.5rem 1rem",
             }}
         >
-            <b>Definition{name && ` (${name})`}.</b> {children}
+            <b>Proposition{name && ` (${name})`}.</b> {children}
         </div>
     )
 }
