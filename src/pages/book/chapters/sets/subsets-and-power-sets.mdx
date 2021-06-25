@@ -56,6 +56,22 @@ print(kebab_pizza.issubset(pizza_toppings))
     <Tex math="A = B" /> iff both <Tex math="A \subseteq B"/> and <Tex math="B \subseteq A" />.
 </Proposition>
 
+<Definition name="Power Set">
+    The set consisting of all subsets of a set <Tex math="A"/> is called <em>power set of</em> <Tex math="A"/>, written <Tex math="\wp(A)"/>.
+    <Tex math="\wp(A) = \{ B \mid B \subseteq A \}" block/>
+</Definition>
+
 <!-- END SOURCE: OLP -->
 
-Try to reason why the above proposition is valid, the answer can be found in Open Logic Project book.
+The symbol $\wp$ can be written `\wp` in TeX (perhaps short for _Weierstrass p-function_).
+You may also encounter different power set notations that uses different styles of "p" e.g. $P(A)$.
+
+<Example name="Different soups">
+    The soups can have any combination of ingredients and still taste good.
+    The chef wants a list of all soups he can make from a set of ingredients <Tex math="S = \{ \text{salmon}, \text{potato}, \text{carrot} \}"/>.
+    That would be <Tex math="\wp(S) = \{ \emptyset, \{ \text{salmon, potato, carrot} \}, \{ \text{salmon, potato} \}, \{ \text{salmon, carrot} \}, \{\text{potato, carrot}\} \}." block/>
+</Example>
+
+<Problem>
+    List all subsets of
+</Problem>
