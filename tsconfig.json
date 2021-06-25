@@ -4,7 +4,7 @@
     "moduleResolution": "Node",
     "noImplicitAny": false,
     "removeComments": true,
-    "preserveConstEnums": true,
+    "preserveConstEnums": false,
     "sourceMap": true,
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true
