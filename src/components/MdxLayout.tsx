@@ -7,6 +7,7 @@ import { Link } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
 import { MathDisplay } from "./MathDisplay/MathDisplay"
 import { PageContext } from "gatsby/dist/gatsby/src/query/types"
+import { Problem } from "./MathDisplay/Problem"
 import { Proposition } from "./MathDisplay/Proposition"
 
 interface Props {
@@ -17,12 +18,20 @@ interface Props {
 const MdxLayout = ({ children, pageContext }: Props): JSX.Element => {
     return (
         <MDXProvider
-            components={{ Definition, Example, Proposition, Tex: MathDisplay }}
+            components={{
+                Definition,
+                Example,
+                Problem,
+                Proposition,
+                Tex: MathDisplay,
+            }}
         >
             <Helmet title={pageContext.frontmatter.title} defer={false} />
-            <LicenseAttribution />
-            <h1>{pageContext.frontmatter.title}</h1>
-            {children}
+            <main>
+                <LicenseAttribution />
+                <h1>{pageContext.frontmatter.title}</h1>
+                {children}
+            </main>
 
             <footer>
                 <Link to="/">Table of Contents</Link>

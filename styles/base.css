@@ -3,3 +3,14 @@
 body {
     font-family: 'Benne', serif;
 }
+
+main {
+    margin: 0 auto;
+    max-width: 95vw;
+}
+
+@media screen and (min-width: 800px) {
+    main {
+        max-width: 80vw;
+    }
+}
