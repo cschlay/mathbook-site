@@ -1,27 +1,11 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended"
-  ],
   "parser": "@typescript-eslint/parser",
   "plugins": [
     "@typescript-eslint"
   ],
-  "rules": {
-    "linebreak-style": ["error", "unix"],
-    "quotes": ["warn", "double"],
-    "semi": "off",
-    "no-await-in-loop": "error",
-    "no-loss-of-precision": "error",
-    "require-atomic-updates": "error",
-    "curly": "error",
-    "no-else-return": ["error", { "allowElseIf": false }],
-    "no-empty-function": "warn",
-    "no-empty-pattern": "warn",
-    "no-magic-numbers": "warn",
-    "no-ternary": "error",
-    "sort-imports": "warn"
-  }
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
+  ]
 }

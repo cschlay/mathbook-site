@@ -1,7 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Benne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300&display=swap');
+
+:root {
+    --color-bg: #faf8f7;
+    --color-link: #ea645f;
+
+    --font-headers: 'Spectral', serif;
+    --font-body: 'Spectral', serif;
+
+}
 
 body {
-    font-family: 'Benne', serif;
+    background-color: var(--color-bg);
+    font-family: var(--font-headers);
 }
 
 main {
@@ -12,5 +22,11 @@ main {
 @media screen and (min-width: 800px) {
     main {
         max-width: 80vw;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        max-width: 60vw;
     }
 }
