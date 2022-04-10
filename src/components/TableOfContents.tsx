@@ -36,7 +36,7 @@ export const TableOfContents = ({ items }: Props): JSX.Element => {
   const content: Record<string, TableOfContentsItem[]> = items.reduce(
     (result, item) => {
       const [chapter] = item.slug.split("/").slice(-2);
-      const key = chapter.replace(/[0-9]*_/, "").replaceAll("-", " ");
+      const key = chapter.replace(/[0-9]*_/, "").replace(/-/g, " ");
       if (!result[key]) {
         result[key] = [];
       }
