@@ -1,4 +1,54 @@
 ---
 title: Relations as Sets
 ---
+import {Definition} from "../../../../components/MathDisplay/Definition";
+import {Example} from "../../../../components/MathDisplay/Example";
+import {Quoted} from "../../../../components/mdx/Quoted";
+
+<Quoted>
+
+  <Definition name="Binary relation">
+    A <em>binary relation</em> on a set <tex>A</tex> is a subset of <tex>A^2 = A \times A</tex>.
+    If <tex>R \subseteq A^2</tex> is a binary relation on <tex>A</tex> and <tex>x, y \in A</tex>, we write <tex>xRy</tex> for <tex>(x, y) \in R</tex>.
+  </Definition>
+
+</Quoted>
+
+The relation is indeed a rule that defines the set $R$ of pairs.
+The most basic relation is <em>identity relation</em> where elements relate themselves $(x, x) \in R$ when $x \in A$, denoted as $\text{Id}_A$.
+
+<Example>
+  Let <tex>{"A = \\{ \\text{shorts}, \\text{t-shirt}, \\text{sweater}, \\text{socks} \\}"}</tex>,
+  when we define a relation "items that are normally worn together" the result would be <tex>{"R = \\{ (\\text{shorts}, \\text{t-shirt}), (\\text{sweater}, \\text{socks}) \\}"}</tex>.
+</Example>
+
+This may remind you of _relational databases_.
+Each row consist of pairs in $R$ such as $(\text{shorts}, \text{t-shirt})$ and elements are the columns.
+If we were to define three columns, we would need to define relation of relations $((\text{shorts}, \text{t-shirt}), \text{sandals})$.
+
+## Special Properties of Relations
+
+<Quoted>
+
+  Some kinds of relations turn out to be so common that they have been given special names.
+  To get at exactly how these relations are similar, and how they differ,
+  we categorize them according to some special properties that relation can have.
+  It turns out that some of these special properties are especially important: orders and equivalence relations.
+
+  <Definition name="Reflexivity">
+    A relation <tex>R \subseteq A^2</tex> is <em>reflexive</em> iff, for every <tex>x \in A</tex>, <tex>xRx</tex>.
+  </Definition>
+
+  <Definition name="Transitivity">
+    A relation <tex>R \subseteq A^2</tex> is <em>transitive</em> iff, whenever <tex>xRy</tex> and <tex>yRz</tex>, then also <tex>xRz</tex>.
+  </Definition>
+
+  <Definition name="Symmetry">
+    A relation <tex>R \subseteq A^2</tex> is <em>symmetric</em> iff, whenever <tex>xRy</tex>, then also <tex>yRx</tex>.
+  </Definition>
+
+</Quoted>
+
+The _anti-symmetric_ relation is the opposite of symmetric relation, where the reverse is never true except when $x = y$.
+However, the relation may not be reflexive.
 
