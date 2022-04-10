@@ -6,8 +6,8 @@ interface Props {
 }
 
 const Container = styled.div`
-  border-left: 3px solid var(--color-sourced);
-  padding-left: 1rem;
+  border-right: 3px solid var(--color-sourced);
+  padding-right: 1rem;
 `;
 
 export const Quoted = ({ children }: Props): JSX.Element => {

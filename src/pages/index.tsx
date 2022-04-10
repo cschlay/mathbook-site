@@ -26,8 +26,6 @@ const IndexPage = ({ data }: Props): JSX.Element => {
           textbooks. There is attempts to include concrete examples and
           comments.
         </p>
-
-        <h2>Contents</h2>
         <TableOfContents items={data.allMdx.nodes} />
       </main>
     </LayoutBase>

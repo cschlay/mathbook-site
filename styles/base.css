@@ -3,7 +3,7 @@
 :root {
     --color-bg: #faf8f7;
     --color-link: #e34039;
-    --color-sourced: #f1c6f6;
+    --color-sourced: #f8d361;
 
     --font-headers: 'Spectral', serif;
     --font-body: 'Spectral', serif;
@@ -18,18 +18,22 @@ body {
 main {
     margin: 0 auto;
     min-height: 75vh;
-    max-width: 95vw;
+    width: 95vw;
+}
+
+p {
+    margin: 2rem 0;
 }
 
 @media screen and (min-width: 800px) {
     main {
-        max-width: 80vw;
+        width: 80vw;
     }
 }
 
 @media screen and (min-width: 1200px) {
     main {
-        max-width: 60vw;
+        width: 60vw;
     }
 }
 

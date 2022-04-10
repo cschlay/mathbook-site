@@ -1,6 +1,6 @@
 import * as React from "react";
-import styled from "@emotion/styled";
 import { Link } from "./Link";
+import styled from "@emotion/styled";
 
 export interface TableOfContentsItem {
   id: string;
@@ -23,6 +23,7 @@ const Container = styled.ul`
   a {
     color: var(--color-link);
   }
+
   a:hover {
   }
 
@@ -31,14 +32,48 @@ const Container = styled.ul`
   }
 `;
 
-export const TableOfContents = ({ items }: Props) => {
+export const TableOfContents = ({ items }: Props): JSX.Element => {
+  const content: Record<string, TableOfContentsItem[]> = items.reduce(
+    (result, item) => {
+      const [chapter] = item.slug.split("/").slice(-2);
+      const key = chapter.replace(/[0-9]*_/, "").replaceAll("-", " ");
+      if (!result[key]) {
+        result[key] = [];
+      }
+      result[key].push(item);
+      return result;
+    },
+    {}
+  );
   return (
-    <Container>
-      {items.map((node) => (
-        <li key={node.id}>
-          <Link href={`/${node.slug}`}>{node.frontmatter.title}</Link>
-        </li>
+    <>
+      {Object.entries(content).map(([name, items]) => (
+        <List key={name} name={name} items={items} />
       ))}
-    </Container>
+    </>
+  );
+};
+
+interface ListProps {
+  name: string;
+  items: TableOfContentsItem[];
+}
+
+const StyledHeader = styled.h2`
+  text-transform: capitalize;
+`;
+
+const List = ({ name, items }: ListProps): JSX.Element => {
+  return (
+    <>
+      <StyledHeader>{name}</StyledHeader>
+      <Container>
+        {items.map((node) => (
+          <li key={node.id}>
+            <Link href={`/${node.slug}`}>{node.frontmatter.title}</Link>
+          </li>
+        ))}
+      </Container>
+    </>
   );
 };
