@@ -7,7 +7,6 @@
 
     --font-headers: 'Spectral', serif;
     --font-body: 'Spectral', serif;
-
 }
 
 body {
@@ -32,4 +31,18 @@ main {
     main {
         max-width: 60vw;
     }
+}
+
+.math {
+    overflow-x: auto;
+}
+
+.math::-webkit-scrollbar, pre::-webkit-scrollbar {
+    height: 10px;
+}
+.math::-webkit-scrollbar-track, pre::-webkit-scrollbar-track {
+    background-color: gray;
+}
+.math::-webkit-scrollbar-thumb, pre::-webkit-scrollbar-thumb {
+    background-color: #545151;
 }

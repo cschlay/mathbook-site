@@ -7,7 +7,7 @@ interface Props {
 
 const Container = styled.div`
   border-left: 3px solid var(--color-sourced);
-  padding-left: 0.5rem;
+  padding-left: 1rem;
 `;
 
 export const Quoted = ({ children }: Props): JSX.Element => {

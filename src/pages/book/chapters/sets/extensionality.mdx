@@ -4,38 +4,44 @@ sources:
   - olp
 ---
 
-<!--This file contains text from Open Logic Project, used under CC BY 4.0. License.
-Content is modified to fit computer science approach, see README.md-->
+import {Definition} from "../../../../components/MathDisplay/Definition";
+import {Example} from "../../../../components/MathDisplay/Example";
+import {Quoted} from "../../../../components/mdx/Quoted";
 
-<!-- SOURCE: OLP -->
-A _set_ is a collection of objects.
-The objects in the set are called _elements_ of the set.
+<Quoted>
 
-- If $x$ is an element of a set $S$, we write $x \in S$;
-- If not, we write $x \notin S$.
-- The set which has no elements is called _empty set_ and denoted $\emptyset$.
+  A _set_ is a collection of objects.
+  The objects in the set are called _elements_ of the set.
 
-It does not matter how we specify the set, or how we order its elements or how many times we count its elements.
-All that matters are what its elements are.
+  - If $x$ is an element of a set $S$, we write $x \in S$;
+  - If not, we write $x \notin S$.
+  - The set which has no elements is called _empty set_ and denoted $\emptyset$.
 
-<Definition name="Extensionality">
-  If <Tex math="A"/> and <Tex math="B"/> are sets, then <Tex math="A = B"/> if and only if every element of <Tex
-  math="A"/> is also an element of <Tex math="B"/>, and vice versa.
-</Definition>
 
-In general, when we have objects $a_1, \ldots, a_n$, then $\{a_1, \ldots, a_n\}$ is the set $S$ whose elements are $a_1, \ldots, a_n$.
-There can be only one such set:
+  It does not matter how we specify the set, or how we order its elements or how many times we count its elements.
+  All that matters are what its elements are.
 
-$$
-S = \{ a, a, b \} = \{ a, b \} = \{ b, a \}.
-$$
-<!-- END SOURCE: OLP -->
+
+  <Definition name="Extensionality">
+    If <tex>A</tex> and <tex>B</tex> are sets, then <tex>A = B</tex> if and only if every element of <tex>A</tex>
+    is also an element of <tex>B</tex>, and vice versa.
+  </Definition>
+
+  In general, when we have objects <tex>a_1, \ldots, a_n</tex>, then <tex>{"\\{a_1, \\ldots, a_n\\}"}</tex> is the set $S$ whose elements are
+  $a_1, \ldots, a_n$.
+  There can be only one such set
+
+  <tex block={true}>
+    {"S = \\{a, a, b \\} = \\{a, b \\} = \\{b, a \\}."}
+  </tex>
+
+</Quoted>
 
 We usually don't write out duplicate elements since they have no meaning as extensionality reduces them to same set.
 
 <Example name="Color palette">
   <p>
-    Colors used in a website design can be thought as a set <Tex math="S = \{blue, green, orange\}"/>.
+    Colors used in a website design can be thought as a set <tex>{"S = \\{blue, green, orange\\}"}</tex>.
     Choosing another blue of same tone is still same blue.
     If two websites use same colors, they use same set of colors.
   </p>
@@ -52,20 +58,22 @@ print(contains_dairy({ "flour", "milk", "butter" }))
 # True
 ```
 
-<!-- SOURCE: OLP -->
-Frequently we’ll specify a set by some property that its elements share.
-We’ll use the following shorthand notation for that: $\{x \mid f(x)\}$, where the
-$f(x)$ stands for the property that $x$ has to have in order to be counted among
-the elements of the set. The property can be thought as a function that generate the elements.
-<!-- END SOURCE: OLP -->
+<Quoted>
+
+  Frequently we’ll specify a set by some property that its elements share.
+  We’ll use the following shorthand notation for that: <tex>{"\\{x \mid f(x)\\}"}"</tex>, where the
+  $f(x)$ stands for the property that $x$ has to have in order to be counted among
+  the elements of the set. The property can be thought as a function that generate the elements.
+
+</Quoted>
 
 <Example name="Generating serving sizes">
   <p>
     We want serve potatoes to our guests.
-    It is decided to serve them in multiples of <Tex math="1.5"/> where base amount is <Tex math="100\text{ g}"/>.
-    But no more than <Tex math="500\text{ g}"/>. To generate all sizes we could specify:
+    It is decided to serve them in multiples of <tex>1.5</tex> where base amount is <tex>{"100\\text{g}"}</tex>.
+    But no more than <tex>{"500\\text{g}"}</tex>. To generate all sizes we could specify:
   </p>
-  <Tex math="S = \{ x \mid x \cdot 1.5 \le 500 \} = \{ 150, 225, 337.5 \}." block/>
+  <tex block={true}>{"S = \\{ x \\mid x \\cdot 1.5 \\le 500 \\} = \\{ 150, 225, 337.5 \\}."}</tex>
 </Example>
 
 In programming, it is useful to generate values that follow certain rules. Were we writing a program of the previous example
@@ -82,7 +90,3 @@ print(calculate_serving_sizes(100, 1.5, 500))
 This kind of notation is called [_set comprehension_](https://en.wikipedia.org/wiki/Set-builder_notation).
 Typical use cases may be related to business logic where certain values need to be generated e.g. price classes.
 The notation in programming languages tend to get longer and more complex than in math so use it only for simple cases.
-
-<Problem>
-  A multiple choice problem to select equal sets.
-</Problem>
