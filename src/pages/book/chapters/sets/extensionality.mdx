@@ -1,8 +1,7 @@
 ---
 title: Extensionality
-
 sources:
-    - olp
+  - olp
 ---
 
 <!--This file contains text from Open Logic Project, used under CC BY 4.0. License.
@@ -20,25 +19,26 @@ It does not matter how we specify the set, or how we order its elements or how m
 All that matters are what its elements are.
 
 <Definition name="Extensionality">
-    If <Tex math="A"/> and <Tex math="B"/> are sets, then <Tex math="A = B"/> if and only if every element of <Tex math="A"/> is also an element of <Tex math="B"/>, and vice versa.
+  If <Tex math="A"/> and <Tex math="B"/> are sets, then <Tex math="A = B"/> if and only if every element of <Tex
+  math="A"/> is also an element of <Tex math="B"/>, and vice versa.
 </Definition>
 
 In general, when we have objects $a_1, \ldots, a_n$, then $\{a_1, \ldots, a_n\}$ is the set $S$ whose elements are $a_1, \ldots, a_n$.
 There can be only one such set:
 
 $$
-    S = \{ a, a, b \} = \{ a, b \} = \{ b, a \}.
+S = \{ a, a, b \} = \{ a, b \} = \{ b, a \}.
 $$
 <!-- END SOURCE: OLP -->
 
 We usually don't write out duplicate elements since they have no meaning as extensionality reduces them to same set.
 
 <Example name="Color palette">
-    <p>
-        Colors used in a website design can be thought as a set <Tex math="S = \{blue, green, orange\}"/>.
-        Choosing another blue of same tone is still same blue.
-        If two websites use same colors, they use same set of colors.
-    </p>
+  <p>
+    Colors used in a website design can be thought as a set <Tex math="S = \{blue, green, orange\}"/>.
+    Choosing another blue of same tone is still same blue.
+    If two websites use same colors, they use same set of colors.
+  </p>
 </Example>
 
 In practice, sets can be used to check if something exists in something e.g. if a recipe for cake contains milk or not.
@@ -60,12 +60,12 @@ the elements of the set. The property can be thought as a function that generate
 <!-- END SOURCE: OLP -->
 
 <Example name="Generating serving sizes">
-    <p>
-        We want serve potatoes to our guests.
-        It is decided to serve them in multiples of <Tex math="1.5"/> where base amount is <Tex math="100\text{ g}"/>.
-        But no more than <Tex math="500\text{ g}"/>. To generate all sizes we could specify:
-    </p>
-    <Tex math="S = \{ x \mid x \cdot 1.5 \le 500 \} = \{ 150, 225, 337.5 \}." block/>
+  <p>
+    We want serve potatoes to our guests.
+    It is decided to serve them in multiples of <Tex math="1.5"/> where base amount is <Tex math="100\text{ g}"/>.
+    But no more than <Tex math="500\text{ g}"/>. To generate all sizes we could specify:
+  </p>
+  <Tex math="S = \{ x \mid x \cdot 1.5 \le 500 \} = \{ 150, 225, 337.5 \}." block/>
 </Example>
 
 In programming, it is useful to generate values that follow certain rules. Were we writing a program of the previous example
@@ -84,5 +84,5 @@ Typical use cases may be related to business logic where certain values need to 
 The notation in programming languages tend to get longer and more complex than in math so use it only for simple cases.
 
 <Problem>
-    A multiple choice problem to select equal sets.
+  A multiple choice problem to select equal sets.
 </Problem>

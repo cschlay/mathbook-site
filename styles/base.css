@@ -2,7 +2,8 @@
 
 :root {
     --color-bg: #faf8f7;
-    --color-link: #ea645f;
+    --color-link: #e34039;
+    --color-sourced: #f1c6f6;
 
     --font-headers: 'Spectral', serif;
     --font-body: 'Spectral', serif;
@@ -12,10 +13,12 @@
 body {
     background-color: var(--color-bg);
     font-family: var(--font-headers);
+    line-height: 1.5;
 }
 
 main {
     margin: 0 auto;
+    min-height: 75vh;
     max-width: 95vw;
 }
 

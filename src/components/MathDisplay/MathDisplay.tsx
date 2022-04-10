@@ -1,9 +1,9 @@
-import * as React from "react"
-import * as katex from "katex"
+import * as React from "react";
+import * as katex from "katex";
 
 interface Props {
-    block?: boolean
-    math: string
+  block?: boolean;
+  children: string;
 }
 
 /**
@@ -12,22 +12,25 @@ interface Props {
  *
  * Warning: Doesn't sanitize against XSS, so do not render user inputs
  */
-export const MathDisplay = ({ block = false, math }: Props) => {
-    const renderedContent = React.useMemo(
-        () => katex.renderToString(math),
-        [math]
-    )
+export const MathDisplay = ({ block = false, children }: Props) => {
+  let renderedContent = null;
+  try {
+    renderedContent = katex.renderToString(children);
+  } catch (e) {
+    console.log(children);
+    // Probably not a string, use component as <MathDisplay>{"\\frac{1}{2}"}</MathDisplay>
+  }
 
-    if (block) {
-        return (
-            <div className="math math-display">
-                <div
-                    className="katex-display"
-                    dangerouslySetInnerHTML={{ __html: renderedContent }}
-                />
-            </div>
-        )
-    }
+  if (block) {
+    return (
+      <div className="math math-display">
+        <div
+          className="katex-display"
+          dangerouslySetInnerHTML={{ __html: renderedContent }}
+        />
+      </div>
+    );
+  }
 
-    return <span dangerouslySetInnerHTML={{ __html: renderedContent }} />
-}
+  return <span dangerouslySetInnerHTML={{ __html: renderedContent }} />;
+};

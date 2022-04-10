@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 interface Props {
   children: React.ReactNode;
   href: string;
+  inTab?: boolean;
 }
 
 const StyledLink = styled.a`
@@ -18,6 +19,12 @@ const StyledLink = styled.a`
   }
 `;
 
-export const Link = ({ children, href }: Props): JSX.Element => {
-  return <StyledLink href={href}>{children}</StyledLink>;
+export const Link = ({ children, href, inTab }: Props): JSX.Element => {
+  const target: string | undefined = inTab ? "_blank" : undefined;
+
+  return (
+    <StyledLink href={href} target={target} rel="noreferrer">
+      {children}
+    </StyledLink>
+  );
 };

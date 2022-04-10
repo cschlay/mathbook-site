@@ -1,43 +1,44 @@
 ---
 title: Subsets and Power Sets
 ---
+import {Definition} from "../../../../components/MathDisplay/Definition";
+import {Example} from "../../../../components/MathDisplay/Example";
+import {Problem} from "../../../../components/MathDisplay/Problem";
+import {Proposition} from "../../../../components/MathDisplay/Proposition";
+import {Quoted} from "../../../../components/mdx/Quoted";
 
-<!--This file contains text from Open Logic Project, used under CC BY 4.0. License.
-Content is modified to fit computer science approach, see README.md-->
+<Quoted source="olp">
 
-<!-- SOURCE: OLP -->
+  We will often want to compare sets. One kind of comparison is: _everything in one set is in the other (set) too_.
+  This situation is sufficiently important for us to introduce some new notation.
 
-We will often want to compare sets. One kind of comparison is: _everything in one set is in the other (set) too_.
-This situation is sufficiently important for us to introduce some new notation.
+  <Definition name="Subset">
+    If every element of a set <tex>A</tex> is also an element of <tex>B</tex>,
+    then we say that <tex>A</tex> is a <em>subset</em> of <tex>B</tex>, and we write <tex>A \subseteq B</tex>.
+    If <tex>A \subseteq B</tex> but <tex>A \neq B</tex>,
+    we write <tex>A \subset B</tex>,
+    and say that <tex>A</tex> is a <em>proper subset</em> of <tex>B</tex>.
+  </Definition>
 
-<Definition name="Subset">
-    If every element of a set <Tex math="A"/> is also an element of <Tex math="B" />,
-    then we say that <Tex math="A"/> is a <em>subset</em> of <Tex math="B"/>, and we write <Tex math="A \subseteq B"/>.
-    If <Tex math="A \subseteq B" /> but <Tex math="A \neq B" />,
-    we write <Tex math="A \subset B" />,
-    and say that <Tex math="A" /> is a <em>proper subset</em> of <Tex math="B" />.
-</Definition>
-
-<!-- END SOURCE: OLP -->
+</Quoted>
 
 The notation $\subset$ is used because they are similar to equality operators $\leq$ and $<$. You may also see $\subsetneq$ in other literature.
 
-<!-- SOURCE: OLP -->
-
-<Example name="Basics">
-    Every set is a subset of itself, and <Tex math="\emptyset"/> is a subset of every set.
-    The set of even numbers is a subset of the set of natural numbers. Also <Tex math="\{a,b\} \subseteq \{a,b,c\}"/>. But <Tex math="\{a,b,e\}" /> is not a subset of <Tex math="\{a,b,c\}"/>.
-</Example>
-
-<!-- END SOURCE: OLP -->
+<Quoted source="olp">
+  <Example name="Basics">
+    Every set is a subset of itself, and <tex>\emptyset</tex> is a subset of every set.
+    The set of even numbers is a subset of the set of natural numbers. Also <tex>{"\\{a,b\\} \\subseteq \\{a,b,c\\}"}</tex>.
+    But <tex>{"\\{a,b,e\\}"}</tex> is not a subset of <tex>{"\\{a,b,c\\}"}</tex>.
+  </Example>
+</Quoted>
 
 Applying subsets is useful for check validity of something such as that a customer have chosen
 appropriate combination of items. Or to check that surgery has sanitized tools, each tool has unique id.
 
 <Example name="Pizza toppings">
-    All pizza toppings are a set <Tex math="A = \{ \text{ham}, \text{kebab}, \text{mozzarella}, \text{tomato} \}" />.
-    Choosing any subset of toppings would result in a pizza that have name ham pizza, mozzarella pizza etc.
-    A kebab pizza would be a proper subset <Tex math="B = \{ \text{kebab}, \text{mozzarella} \}" />, so <Tex math="B \subset A" />.
+  All pizza toppings are a set <tex>{"A = \\{ \\text{ham}, \\text{kebab}, \\text{mozzarella}, \\text{tomato} \}"}</tex>.
+  Choosing any subset of toppings would result in a pizza that have name ham pizza, mozzarella pizza etc.
+  A kebab pizza would be a proper subset <tex>{"B = \\{ \text{kebab}, \\text{mozzarella} \\}"}</tex>, so <tex>B \subset A</tex>.
 </Example>
 
 In Python the example would be written as
@@ -50,28 +51,29 @@ print(kebab_pizza.issubset(pizza_toppings))
 # True
 ```
 
-<!-- SOURCE: OLP -->
+<Quoted>
 
 <Proposition>
-    <Tex math="A = B" /> iff both <Tex math="A \subseteq B"/> and <Tex math="B \subseteq A" />.
+  <tex>A = B</tex>
+  iff both <tex>A \subseteq B</tex> and <tex>B \subseteq A</tex>.
 </Proposition>
 
 <Definition name="Power Set">
-    The set consisting of all subsets of a set <Tex math="A"/> is called <em>power set of</em> <Tex math="A"/>, written <Tex math="\wp(A)"/>.
-    <Tex math="\wp(A) = \{ B \mid B \subseteq A \}" block/>
+  The set consisting of all subsets of a set <tex>A</tex> is called <em>power set of</em>
+  <tex>A</tex>
+  , written <tex>\wp(A)</tex>.
+  <tex block={true}>{"\\wp(A) = \\{ B \\mid B \\subseteq A \\}"}</tex>
 </Definition>
 
-<!-- END SOURCE: OLP -->
+</Quoted>
 
 The symbol $\wp$ can be written `\wp` in TeX (perhaps short for _Weierstrass p-function_).
 You may also encounter different power set notations that uses different styles of "p" e.g. $P(A)$.
 
 <Example name="Different soups">
-    The soups can have any combination of ingredients and still taste good.
-    The chef wants a list of all soups he can make from a set of ingredients <Tex math="S = \{ \text{salmon}, \text{potato}, \text{carrot} \}"/>.
-    That would be <Tex math="\wp(S) = \{ \emptyset, \{ \text{salmon, potato, carrot} \}, \{ \text{salmon, potato} \}, \{ \text{salmon, carrot} \}, \{\text{potato, carrot}\} \}." block/>
+  The soups can have any combination of ingredients and still taste good.
+  The chef wants a list of all soups he can make from a set of ingredients <tex
+  math="S = \{ \\text{salmon}, \\text{potato}, \\text{carrot} \\}"/>.
+  That would be <tex
+  blocK={true}>{"\\wp(S) = \\{ \\emptyset, \\{ \\text{salmon, potato, carrot} \\}, \\{ \\text{salmon, potato} \\}, \\{ \\text{salmon, carrot} \\}, \\{\\text{potato, carrot}\\} \\}."}</tex>
 </Example>
-
-<Problem>
-    List all subsets of
-</Problem>

@@ -1,22 +1,17 @@
 import * as React from "react";
-import { LicenseAttribution } from "../components/LicenseAttribution";
-import { graphql } from "gatsby";
-import { TitleHeader } from "../components/TitleHeader";
 import { LayoutBase } from "../components/layouts/LayoutBase";
-
-interface gqlNode {
-  id: string;
-  frontmatter: {
-    title: string;
-    sources: string[];
-  };
-  slug: string;
-}
+import { LicenseAttribution } from "../components/LicenseAttribution";
+import {
+  TableOfContents,
+  TableOfContentsItem,
+} from "../components/TableOfContents";
+import { TitleHeader } from "../components/TitleHeader";
+import { graphql } from "gatsby";
 
 interface Props {
   data: {
     allMdx: {
-      nodes: gqlNode[];
+      nodes: TableOfContentsItem[];
     };
   };
 }
@@ -26,16 +21,14 @@ const IndexPage = ({ data }: Props): JSX.Element => {
     <LayoutBase>
       <main>
         <TitleHeader>Mathbook Project (Logic Edition)</TitleHeader>
-        <LicenseAttribution />
+        <p>
+          This is a hobbyist mathematics textbook based on open source
+          textbooks. There is attempts to include concrete examples and
+          comments.
+        </p>
 
         <h2>Contents</h2>
-        <ul>
-          {data.allMdx.nodes.map((node) => (
-            <li key={node.id}>
-              <a href={`/${node.slug}`}>{node.frontmatter.title}</a>
-            </li>
-          ))}
-        </ul>
+        <TableOfContents items={data.allMdx.nodes} />
       </main>
     </LayoutBase>
   );

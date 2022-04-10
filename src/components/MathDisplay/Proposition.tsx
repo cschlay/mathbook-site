@@ -1,19 +1,15 @@
-import * as React from "react"
+import * as React from "react";
+import { EnvironmentContainer } from "./EnvironmentContainer";
 
 interface Props {
-    children: string
-    name?: string
+  children: string;
+  name?: string;
 }
 
 export const Proposition = ({ children, name }: Props) => {
-    return (
-        <div
-            style={{
-                border: "1px solid black",
-                padding: "0.5rem 1rem",
-            }}
-        >
-            <b>Proposition{name && ` (${name})`}.</b> {children}
-        </div>
-    )
-}
+  return (
+    <EnvironmentContainer>
+      <b>Proposition{name && ` (${name})`}.</b> {children}
+    </EnvironmentContainer>
+  );
+};

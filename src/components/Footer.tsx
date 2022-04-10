@@ -3,10 +3,12 @@ import { FaGithub } from "react-icons/fa";
 import { Link } from "./Link";
 import styled from "@emotion/styled";
 import { LinkIcon } from "./LinkIcon";
+import { LicenseAttribution } from "./LicenseAttribution";
 
 const StyledFooter = styled.footer`
   background: #110707;
-  color: #f3ecec;
+  color: #c4c0c0;
+  min-height: 10vh;
   padding: 1rem;
 
   display: flex;
@@ -17,19 +19,15 @@ const StyledFooter = styled.footer`
 export const Footer = (): JSX.Element => {
   return (
     <StyledFooter>
-      <p>
-        Licensed under{" "}
-        <Link href="https://choosealicense.com/licenses/agpl-3.0/">
+      <LicenseAttribution />
+      <small>
+        Source code licensed under{" "}
+        <Link href="https://github.com/cschlay/mathbook-site/blob/main/LICENSE">
           GNU AGPLv3
         </Link>{" "}
         and content with{" "}
         <Link href="https://openlogicproject.org/olp-license/">CC BY 4.0</Link>.
-      </p>
-
-      <LinkIcon
-        href="https://github.com/cschlay/mathbook-site"
-        icon={<FaGithub />}
-      />
+      </small>
     </StyledFooter>
   );
 };
