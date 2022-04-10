@@ -5,3 +5,4 @@ public
 coverage/
 sonarlint/
 *.log
+.idea/
