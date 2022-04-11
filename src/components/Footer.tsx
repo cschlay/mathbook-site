@@ -1,9 +1,7 @@
 import * as React from "react";
-import { FaGithub } from "react-icons/fa";
+import { LicenseAttribution } from "./LicenseAttribution";
 import { Link } from "./Link";
 import styled from "@emotion/styled";
-import { LinkIcon } from "./LinkIcon";
-import { LicenseAttribution } from "./LicenseAttribution";
 
 const StyledFooter = styled.footer`
   background: #110707;

@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as katex from "katex";
+import katex from "katex";
 
 interface Props {
   block?: boolean;

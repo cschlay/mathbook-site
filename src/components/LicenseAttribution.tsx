@@ -1,6 +1,6 @@
 import * as React from "react";
-import styled from "@emotion/styled";
 import { Link } from "./Link";
+import styled from "@emotion/styled";
 
 const Container = styled.p`
   font-size: 0.8rem;
