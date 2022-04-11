@@ -36,7 +36,9 @@ export const TableOfContents = ({ items }: Props): JSX.Element => {
     <>
       {toc.map((chapter) => (
         <React.Fragment key={chapter.index}>
-          <StyledHeader>{chapter.name}</StyledHeader>
+          <StyledHeader>
+            {chapter.index} {chapter.name}
+          </StyledHeader>
           <StyledUl>
             {chapter.items.map((section) => (
               <li key={section.id}>
