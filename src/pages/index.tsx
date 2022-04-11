@@ -1,17 +1,14 @@
 import * as React from "react";
+import { TableOfContents } from "../components/TableOfContents";
 import { LayoutBase } from "../components/layouts/LayoutBase";
-import { LicenseAttribution } from "../components/LicenseAttribution";
-import {
-  TableOfContents,
-  TableOfContentsItem,
-} from "../components/TableOfContents";
+import { SectionItem } from "../types";
 import { TitleHeader } from "../components/TitleHeader";
 import { graphql } from "gatsby";
 
 interface Props {
   data: {
     allMdx: {
-      nodes: TableOfContentsItem[];
+      nodes: SectionItem[];
     };
   };
 }
