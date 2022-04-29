@@ -15,7 +15,9 @@
     "clean": "gatsby clean",
     "test": "jest",
     "coverage": "jest --collectCoverage",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@emotion/react": "11.9.0",
@@ -43,6 +45,13 @@
     "remark-math4": "npm:remark-math@4.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-interactions": "^6.4.22",
+    "@storybook/addon-links": "^6.4.22",
+    "@storybook/react": "^6.4.22",
+    "@storybook/testing-library": "^0.0.10",
     "@swc/core": "^1.2.165",
     "@swc/jest": "^0.2.20",
     "@testing-library/react": "13.0.0",
@@ -51,8 +60,10 @@
     "@types/react": "18.0.1",
     "@typescript-eslint/eslint-plugin": "5.18.0",
     "@typescript-eslint/parser": "5.18.0",
+    "babel-loader": "^8.2.5",
     "eslint": "8.13.0",
     "eslint-plugin-react": "7.29.4",
+    "eslint-plugin-storybook": "^0.5.11",
     "identity-obj-proxy": "3.0.0",
     "jest": "27.5.1",
     "prettier": "2.6.2",
