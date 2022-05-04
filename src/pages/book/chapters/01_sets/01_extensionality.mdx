@@ -4,6 +4,7 @@ sources:
   - olp
 ---
 
+import {ColorPaletteExample} from "./ColorPaletteExample";
 import {Definition} from "../../../../components/MathDisplay/Definition";
 import {Example} from "../../../../components/MathDisplay/Example";
 import {Quoted} from "../../../../components/mdx/Quoted";
@@ -20,7 +21,6 @@ import {Quoted} from "../../../../components/mdx/Quoted";
 
   It does not matter how we specify the set, or how we order its elements or how many times we count its elements.
   All that matters are what its elements are.
-
 
   <Definition name="Extensionality">
     If <tex>A</tex> and <tex>B</tex> are sets, then <tex>A = B</tex> if and only if every element of <tex>A</tex>
@@ -41,14 +41,20 @@ We usually don't write out duplicate elements since they have no meaning as exte
 
 <Example name="Color palette">
   <p>
-    Colors used in a website design can be thought as a set <tex>{"S = \\{blue, green, orange\\}"}</tex>.
-    Choosing another blue of same tone is still same blue.
+    Colors used in a website design can be thought as a set.
+    Choosing two blues of the same tone would result in one blue.
     If two websites use same colors, they use same set of colors.
+  </p>
+  <ColorPaletteExample />
+  <p>
+    The color palettes <tex>S_1</tex> and <tex>S_3</tex> are same because the elements (colors) are same and the order does not matter.
+    The set <tex>S_2</tex> is different as only one color matches.
   </p>
 </Example>
 
-In practice, sets can be used to check if something exists in something e.g. if a recipe for cake contains milk or not.
-The ingredient listing in consumable products usually don't show quantity, so they can be represented as a set.
+We will later use the sets in _relational algebra_ which is the foundation of SQL databases.
+For now, we use sets to handle data that are not quantified.
+One such case is product labels which lists the ingredients used e.g. the amount of milk does not change the fact that a product indeed contains dairy.
 
 ```python
 def contains_dairy(ingredients: set[str]) -> bool:
@@ -60,7 +66,7 @@ print(contains_dairy({ "flour", "milk", "butter" }))
 
 <Quoted>
 
-  Frequently we’ll specify a set by some property that its elements share.
+  Frequently, we’ll specify a set by some property that its elements share.
   We’ll use the following shorthand notation for that: <tex>{"\\{x \mid f(x)\\}"}"</tex>, where the
   $f(x)$ stands for the property that $x$ has to have in order to be counted among
   the elements of the set. The property can be thought as a function that generate the elements.
@@ -70,10 +76,10 @@ print(contains_dairy({ "flour", "milk", "butter" }))
 <Example name="Generating serving sizes">
   <p>
     We want serve potatoes to our guests.
-    It is decided to serve them in multiples of <tex>1.5</tex> where base amount is <tex>{"100\\text{g}"}</tex>.
-    But no more than <tex>{"500\\text{g}"}</tex>. To generate all sizes we could specify:
+    The head cook decided to serve them in multiples of <tex>1.5</tex> where base amount is <tex>{"100\\text{g}"}</tex>.
+    The maximum serving is no more than <tex>{"500\\text{g}"}</tex>. To generate all sizes we write
   </p>
-  <tex block={true}>{"S = \\{ x \\mid x \\cdot 1.5 \\le 500 \\} = \\{ 150, 225, 337.5 \\}."}</tex>
+  <tex block={true}>{"S = \\{ x \\cdot 1.5 \\mid x \\in \\mathbb{N} \\land x \\cdot 1.5 \\le 500 \\} = \\{ 150, 225, 337.5 \\}."}</tex>
 </Example>
 
 In programming, it is useful to generate values that follow certain rules. Were we writing a program of the previous example
