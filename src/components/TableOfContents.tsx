@@ -40,10 +40,10 @@ export const TableOfContents = ({ items }: Props): JSX.Element => {
             {chapter.index} {chapter.name}
           </StyledHeader>
           <StyledUl>
-            {chapter.items.map((section) => (
+            {chapter.items.map((section, secId) => (
               <li key={section.id}>
                 <Link href={`/${section.slug}`}>
-                  {section.frontmatter.title}
+                  {chapter.index}.{secId + 1} {section.frontmatter.title}
                 </Link>
               </li>
             ))}

@@ -31,7 +31,7 @@ const IndexPage = ({ data }: Props): JSX.Element => {
 
 export const query = graphql`
   query TableOfContentsQuery {
-    allMdx {
+    allMdx(sort: { fields: slug }) {
       nodes {
         frontmatter {
           title
