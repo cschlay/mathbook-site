@@ -1,6 +1,7 @@
 ---
 title: Subsets and Power Sets
 ---
+import {GiCheeseWedge, GiDonerKebab, GiHamShank, GiTomato} from "react-icons/gi";
 import {Definition} from "../../../../components/MathDisplay/Definition";
 import {Example} from "../../../../components/MathDisplay/Example";
 import {Proposition} from "../../../../components/MathDisplay/Proposition";
@@ -31,13 +32,16 @@ The notation $\subset$ is used because they are similar to equality operators $\
   </Example>
 </Quoted>
 
-Applying subsets is useful for check validity of something such as that a customer have chosen
-appropriate combination of items. Or to check that surgery has sanitized tools, each tool has unique id.
+Applying subsets is useful for checking validity of something e.g. ensuring that a customer have chosen appropriate combination of items.
+The chefs check that they have chosen ingredients from available sets before planning the servings.
+The managers compare software features against the requirements.
 
 <Example name="Pizza toppings">
-  All pizza toppings are a set <tex>{"A = \\{ \\text{ham}, \\text{kebab}, \\text{mozzarella}, \\text{tomato} \}"}</tex>.
-  Choosing any subset of toppings would result in a pizza that have name ham pizza, mozzarella pizza etc.
-  A kebab pizza would be a proper subset <tex>{"B = \\{ \text{kebab}, \\text{mozzarella} \\}"}</tex>, so <tex>B \subset A</tex>.
+  Let all pizza toppings be a <tex value="A = \{ ham, kebab, cheese, tomato \}." block={true}/>
+  Choosing any subset of toppings would result in a pizza that have name e.g. ham or cheese pizza.
+  A kebab pizza would be a proper subset <tex value="B = \{ kebab, cheese \}," block={true} /> so <tex>B \subset A</tex>.
+  If were replace the names with icons, the sets would be <span className="flex-center"><tex value="A = \{"/><GiHamShank/>, <GiDonerKebab />, <GiCheeseWedge/>, <GiTomato/> <tex value="\}"/></span> and <span className="flex-center"><tex value="B = \{"/><GiDonerKebab/>, <GiCheeseWedge/> <tex value="\}"/></span>.
+
 </Example>
 
 In Python the example would be written as
@@ -53,26 +57,26 @@ print(kebab_pizza.issubset(pizza_toppings))
 <Quoted>
 
 <Proposition>
-  <tex>A = B</tex>
+  <tex>A = B</tex>{' '}
   iff both <tex>A \subseteq B</tex> and <tex>B \subseteq A</tex>.
 </Proposition>
 
 <Definition name="Power Set">
-  The set consisting of all subsets of a set <tex>A</tex> is called <em>power set of</em>
+  The set consisting of all subsets of a set <tex>A</tex> is called <em>power set of</em>{' '}
   <tex>A</tex>
-  , written <tex>\wp(A)</tex>.
-  <tex block={true}>{"\\wp(A) = \\{ B \\mid B \\subseteq A \\}"}</tex>
+  , written <tex>\wp(A)</tex>:
+  <tex value="\wp(A) = \{ B \mid B \subseteq A \}." block={true}/>
 </Definition>
 
 </Quoted>
 
 The symbol $\wp$ can be written `\wp` in TeX (perhaps short for _Weierstrass p-function_).
-You may also encounter different power set notations that uses different styles of "p" e.g. $P(A)$.
+You may also encounter different power set notations that uses different styles of "p" such as $P(A)$.
 
 <Example name="Different soups">
-  The soups can have any combination of ingredients and still taste good.
+  Soups can have any combination of ingredients and still taste good.
   The chef wants a list of all soups he can make from a set of ingredients <tex
-  math="S = \{ \\text{salmon}, \\text{potato}, \\text{carrot} \\}"/>.
-  That would be <tex
-  blocK={true}>{"\\wp(S) = \\{ \\emptyset, \\{ \\text{salmon, potato, carrot} \\}, \\{ \\text{salmon, potato} \\}, \\{ \\text{salmon, carrot} \\}, \\{\\text{potato, carrot}\\} \\}."}</tex>
+  value="S = \{ salmon, potato \}." block={true}/><span className="flex-center"></span>
+  That power set that describes all combinations is
+  <tex block={true} value="\wp(S) = \{ \emptyset, \{ salmon \}, \{ potato \}, \{ potato, carrot \} \}."/>
 </Example>

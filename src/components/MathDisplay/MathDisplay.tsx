@@ -33,7 +33,7 @@ export const MathDisplay = ({ block = false, children, value }: Props) => {
 
   if (block) {
     return (
-      <span className="math math-display">
+      <span className="math math-display" data-block={true}>
         <span
           className="katex-display"
           dangerouslySetInnerHTML={{ __html: renderedContent }}

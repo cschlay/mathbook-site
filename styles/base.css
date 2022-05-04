@@ -48,6 +48,10 @@ p {
     overflow-x: auto;
 }
 
+.math[data-block] {
+    display: block;
+}
+
 .math::-webkit-scrollbar, pre::-webkit-scrollbar {
     height: 10px;
 }
@@ -56,4 +60,13 @@ p {
 }
 .math::-webkit-scrollbar-thumb, pre::-webkit-scrollbar-thumb {
     background-color: #545151;
+}
+
+.flex-center {
+    display: inline-flex;
+    align-items: center;
+}
+.flex-center > svg {
+    font-size: 1.5rem;
+    padding: 0 0.25rem;
 }
