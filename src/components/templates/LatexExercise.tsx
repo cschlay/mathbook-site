@@ -4,6 +4,12 @@ import { ReactNode, useState } from "react";
 import { Button } from "../atoms/Button";
 import { ErrorMessage } from "../atoms/ErrorMessage";
 import { SolvedLabel } from "../atoms/SolvedLabel";
+import { MathDisplay } from "../MathDisplay/MathDisplay";
+import styled from "@emotion/styled";
+
+const Preview = styled.div`
+  text-align: center;
+`;
 
 interface Props {
   /** Write the description as child element. */
@@ -18,11 +24,10 @@ export const LatexExercise = ({ answer, children }: Props) => {
 
   const handleSubmit = () => {
     console.info(`Checking input "${input}" against answer "${answer}"`);
-    console.info(input.match(answer));
     if (input.match(answer)) {
       setSolved(true);
     } else {
-      setError("Your answer was incorrect, check the syntax.");
+      setError("Your answer was incorrect, check the spaces.");
     }
   };
 
@@ -37,6 +42,8 @@ export const LatexExercise = ({ answer, children }: Props) => {
         }}
         value={input}
       />
+      <MathDisplay children={input} block={true} />
+
       {solved ? (
         <SolvedLabel />
       ) : (

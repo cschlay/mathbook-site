@@ -47,7 +47,7 @@ const Palette = ({ id, colors }: PaletteProps) => {
       <MathDisplay>{`S_${id} = \\{`}</MathDisplay>
       {colors.map((color, i) => (
         <>
-          <Color key={color} code={color}>
+          <Color key={`${id}-${color}`} code={color}>
             {color}
           </Color>
           {i < colors.length - 1 && ","}

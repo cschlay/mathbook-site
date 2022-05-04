@@ -29,13 +29,12 @@ import {Quoted} from "../../../../components/mdx/Quoted";
     {' '}is also an element of <tex>B</tex>, and vice versa.
   </Definition>
 
-  In general, when we have objects <tex>a_1, \ldots, a_n</tex>, then <tex>{"\\{a_1, \\ldots, a_n\\}"}</tex> is the set $S$ whose elements are
+  In general, when we have objects $a_1, \ldots, a_n$, then <tex value="\{a_1, \ldots, a_n\}"/> is _the_ set $S$ whose elements are
   $a_1, \ldots, a_n$.
-  There can be only one such set
+  We emphasise the word _the_, since extensionality tells us that there can be only one such set.
+  Indeed, extensionality also licenses the following:
 
-  <tex block={true}>
-    {"S = \\{a, a, b \\} = \\{a, b \\} = \\{b, a \\}."}
-  </tex>
+  <tex block={true} value="S = \{ a, a, b \} = \{ a, b \} = \{ b, a \}."/>
 
 </Quoted>
 
@@ -85,9 +84,10 @@ print(contains_dairy({ "flour", "milk", "butter" }))
 <Quoted>
 
   Frequently, we’ll specify a set by some property that its elements share.
-  We’ll use the following shorthand notation for that: <tex>{"\\{x \mid f(x)\\}"}"</tex>, where the
+  We’ll use the following shorthand notation for that: <tex value="\{ x \mid f(x) \}," block={true} /> where the
   $f(x)$ stands for the property that $x$ has to have in order to be counted among
   the elements of the set. The property can be thought as a function that generate the elements.
+  The symbol $\mid$ is written as `\mid`.
 
 </Quoted>
 
@@ -114,3 +114,7 @@ print(calculate_serving_sizes(100, 1.5, 500))
 This kind of notation is called [_set comprehension_](https://en.wikipedia.org/wiki/Set-builder_notation).
 Typical use cases may be related to business logic where certain values need to be generated e.g. price classes.
 The notation in programming languages tend to get longer and more complex than in math so use it only for simple cases.
+
+<LatexExercise answer={/S = \\{ 2\^n \\mid n \\in \\mathbb{N} \\}/}>
+  <p>Define a set <tex>S</tex> in LaTeX that generates all <tex>2^n</tex> elements in the set of natural numbers <tex>{`\\mathbb{N}`}</tex>.</p>
+</LatexExercise>
