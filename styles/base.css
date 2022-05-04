@@ -2,8 +2,11 @@
 
 :root {
     --color-bg: #faf8f7;
+    --color-error: #fc5757;
     --color-link: #e34039;
     --color-sourced: #f8d361;
+    --color-brand: #1b1364;
+    --color-brand-on: #f0eef8;
 
     --font-headers: 'Spectral', serif;
     --font-body: 'Spectral', serif;
@@ -19,6 +22,10 @@ main {
     margin: 0 auto;
     min-height: 75vh;
     width: 95vw;
+}
+
+h2 {
+    margin: 4rem 0 1rem 0;
 }
 
 p {

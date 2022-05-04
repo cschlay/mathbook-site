@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Container = styled.div`
-  border-right: 3px solid var(--color-sourced);
+  border-right: 5px solid var(--color-sourced);
   padding-right: 1rem;
 `;
 

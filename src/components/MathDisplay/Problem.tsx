@@ -1,12 +1,11 @@
-import React from "react";
+import { ReactNode } from "react";
 import { EnvironmentContainer } from "./EnvironmentContainer";
 
 interface Props {
-  children: React.ReactNode;
-  id: string;
+  children: ReactNode;
 }
 
-export const Problem = ({ children, id }: Props): JSX.Element => {
+export const Problem = ({ children }: Props) => {
   return (
     <EnvironmentContainer>
       <b>Problem.</b> {children}

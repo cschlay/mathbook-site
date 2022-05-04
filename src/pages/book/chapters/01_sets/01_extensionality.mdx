@@ -7,6 +7,8 @@ sources:
 import {ColorPaletteExample} from "./ColorPaletteExample";
 import {Definition} from "../../../../components/MathDisplay/Definition";
 import {Example} from "../../../../components/MathDisplay/Example";
+import {LatexExercise} from "../../../../components/templates/LatexExercise";
+import {Problem} from "../../../../components/MathDisplay/Problem";
 import {Quoted} from "../../../../components/mdx/Quoted";
 
 <Quoted>
@@ -38,6 +40,7 @@ import {Quoted} from "../../../../components/mdx/Quoted";
 </Quoted>
 
 We usually don't write out duplicate elements since they have no meaning as extensionality reduces them to same set.
+In LaTeX sets are written as `\{ a, b \}`, $\in$ is `\in`, $\not\in$ is `\not\in`, and empty set `\emptyset`.
 
 <Example name="Color palette">
   <p>
@@ -63,6 +66,21 @@ def contains_dairy(ingredients: set[str]) -> bool:
 print(contains_dairy({ "flour", "milk", "butter" }))
 # True
 ```
+
+<Quoted>
+  <Problem>
+    Prove that there is at most one empty set.
+  </Problem>
+</Quoted>
+
+<LatexExercise answer={/S\s*=\s*\\{\s*1,\s*2,\s*4,\s*8\s*\\}/g}>
+  <p>
+    Write the set <tex>{`S = \\{ 1, 2, 4, 8 \\}`}</tex> in
+    LaTeX.
+  </p>
+</LatexExercise>
+
+## Set Builder
 
 <Quoted>
 
