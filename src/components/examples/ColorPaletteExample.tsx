@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { MathDisplay } from "../../../../components/MathDisplay/MathDisplay";
+import { MathDisplay } from "../MathDisplay/MathDisplay";
 
 const Container = styled.div`
   display: flex;

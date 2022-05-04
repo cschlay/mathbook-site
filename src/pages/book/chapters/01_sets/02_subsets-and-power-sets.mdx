@@ -4,6 +4,7 @@ title: Subsets and Power Sets
 import {GiCheeseWedge, GiDonerKebab, GiHamShank, GiTomato} from "react-icons/gi";
 import {Definition} from "../../../../components/MathDisplay/Definition";
 import {Example} from "../../../../components/MathDisplay/Example";
+import {Problem} from "../../../../components/MathDisplay/Problem";
 import {Proposition} from "../../../../components/MathDisplay/Proposition";
 import {Quoted} from "../../../../components/mdx/Quoted";
 
@@ -23,6 +24,7 @@ import {Quoted} from "../../../../components/mdx/Quoted";
 </Quoted>
 
 The notation $\subset$ is used because they are similar to equality operators $\leq$ and $<$. You may also see $\subsetneq$ in other literature.
+The corresponding latex symbols are `\subset`, `\subseteq`, and `\subsetneq`.
 
 <Quoted source="olp">
   <Example name="Basics">
@@ -80,3 +82,13 @@ You may also encounter different power set notations that uses different styles 
   That power set that describes all combinations is
   <tex block={true} value="\wp(S) = \{ \emptyset, \{ salmon \}, \{ potato \}, \{ potato, carrot \} \}."/>
 </Example>
+
+<Quoted>
+  <Problem>
+    <p>List all subsets of <tex value="\{ a, b, c, d\}"/>.</p>
+  </Problem>
+
+  <Problem>
+    Show that if <tex value="A"/> has <tex value="n"/> elements, then <tex value="\wp(A)"/> has <tex value="2^n" /> elements.
+  </Problem>
+</Quoted>

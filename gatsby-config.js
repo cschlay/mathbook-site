@@ -6,7 +6,6 @@ module.exports = {
   jsxRuntime: "automatic",
   plugins: [
     "gatsby-plugin-react-helmet",
-    //"gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -53,13 +52,6 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "maths",
-        path: "./src/components/",
-      },
     },
   ],
 };
