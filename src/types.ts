@@ -12,3 +12,9 @@ export interface ChapterItem {
   items: SectionItem[];
   name: string;
 }
+
+export interface User {
+  email: string;
+  username: string;
+  points: number;
+}

@@ -8,10 +8,12 @@ const StyledFooter = styled.footer`
   color: #c4c0c0;
   min-height: 10vh;
   padding: 1rem;
+  margin-top: 2rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 `;
 
 export const Footer = (): JSX.Element => {

@@ -7,7 +7,6 @@ const Container = styled.p`
   padding: 0.5rem;
   line-height: 1.5;
   max-width: 60vw;
-  text-align: center;
 `;
 
 export const LicenseAttribution = (): JSX.Element => {

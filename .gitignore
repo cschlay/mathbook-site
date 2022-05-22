@@ -6,3 +6,4 @@ coverage/
 sonarlint/
 *.log
 .idea/
+.env
