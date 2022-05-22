@@ -20,7 +20,7 @@ const Container = styled.button`
 export const PreviousPageButton = (): JSX.Element => {
   const handleClick = () => history.back();
 
-  if (location.pathname === "/") {
+  if (typeof window !== "undefined" && location.pathname === "/") {
     return <div>LOGO</div>;
   }
 
