@@ -2,6 +2,9 @@ import { ReactNode } from "react";
 import styled from "@emotion/styled";
 
 const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   background: var(--color-brand);
   color: var(--color-brand-on);
   border: none;

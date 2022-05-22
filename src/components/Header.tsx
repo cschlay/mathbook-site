@@ -3,6 +3,7 @@ import { env } from "../../env";
 import { useUser } from "../hooks/useUser";
 import styled from "@emotion/styled";
 import { PreviousPageButton } from "./PreviousPageButton";
+import { FaGithub } from "react-icons/all";
 
 const Container = styled.header`
   display: flex;
@@ -32,7 +33,9 @@ export const Header = () => {
           {user.points} points <Button onClick={handleLogout}>Logout</Button>
         </div>
       ) : (
-        <Button onClick={handleLogin}>Login</Button>
+        <Button onClick={handleLogin}>
+          <FaGithub /> Login
+        </Button>
       )}
     </Container>
   );
