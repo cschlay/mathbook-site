@@ -5,30 +5,55 @@ import { Button } from "../atoms/Button";
 import { ErrorMessage } from "../atoms/ErrorMessage";
 import { SolvedLabel } from "../atoms/SolvedLabel";
 import { MathDisplay } from "../MathDisplay/MathDisplay";
-import styled from "@emotion/styled";
-
-const Preview = styled.div`
-  text-align: center;
-`;
+import { env } from "../../../env";
+import { useUser } from "../../hooks/useUser";
 
 interface Props {
   /** Write the description as child element. */
   children: ReactNode;
-  answer: RegExp;
+  answer?: RegExp;
+  slug?: string;
 }
 
-export const LatexExercise = ({ answer, children }: Props) => {
+export const LatexExercise = ({ slug, answer, children }: Props) => {
+  const user = useUser();
+
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
   const [solved, setSolved] = useState(false);
 
-  const handleSubmit = () => {
+  const submit = async (): Promise<boolean> => {
+    if (!slug) {
+      return true;
+    }
+
+    const response = await fetch(`${env.API_HOST}/problems/${slug}`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("AccessToken")}`,
+      },
+      body: JSON.stringify({ input }),
+    });
+    return response.ok;
+  };
+
+  const handleSubmit = async () => {
     console.info(`Checking input "${input}" against answer "${answer}"`);
-    if (input.match(answer)) {
-      setSolved(true);
+
+    let correct;
+    if (answer) {
+      if (input.match(answer)) {
+        correct = await submit();
+      }
     } else {
+      correct = await submit();
+    }
+
+    if (!correct) {
       setError("Your answer was incorrect, check the spaces.");
     }
+    user.reload();
+    setSolved(correct);
   };
 
   return (
