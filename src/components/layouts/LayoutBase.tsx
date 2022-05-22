@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Footer } from "../Footer";
-import styled from "@emotion/styled";
 import { Header } from "../Header";
 import { SWRConfig } from "swr";
 import { env } from "../../../env";
@@ -13,10 +12,13 @@ export const LayoutBase = ({ children }: Props): JSX.Element => {
     <SWRConfig
       value={{
         fetcher: swrFetch,
+        errorRetryCount: 0,
       }}
     >
-      <Header />
-      <main>{children}</main>
+      <main>
+        <Header />
+        {children}
+      </main>
       <Footer />
     </SWRConfig>
   );
@@ -28,5 +30,10 @@ const swrFetch = (url: string, init: object) => {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("AccessToken")}`,
     },
-  }).then((res) => res.json());
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(new Error());
+  });
 };

@@ -7,10 +7,10 @@ interface Value {
 }
 
 export const useUser = (): Value => {
-  const { data, mutate } = useSWR<User>("/user");
+  const { data, error, mutate } = useSWR<User>("/user");
 
   return {
-    user: data,
+    user: error ? undefined : data,
     reload: mutate,
   };
 };

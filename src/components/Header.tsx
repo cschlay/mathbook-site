@@ -2,11 +2,12 @@ import { Button } from "./atoms/Button";
 import { env } from "../../env";
 import { useUser } from "../hooks/useUser";
 import styled from "@emotion/styled";
+import { PreviousPageButton } from "./PreviousPageButton";
 
 const Container = styled.header`
   display: flex;
-  justify-content: flex-end;
-  padding: 1rem;
+  justify-content: space-between;
+  padding-top: 1rem;
 `;
 
 export const Header = () => {
@@ -25,6 +26,7 @@ export const Header = () => {
 
   return (
     <Container>
+      <PreviousPageButton />
       {user ? (
         <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
           {user.points} points <Button onClick={handleLogout}>Logout</Button>

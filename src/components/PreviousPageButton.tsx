@@ -20,6 +20,10 @@ const Container = styled.button`
 export const PreviousPageButton = (): JSX.Element => {
   const handleClick = () => history.back();
 
+  if (location.pathname === "/") {
+    return <div>LOGO</div>;
+  }
+
   return (
     <Container onClick={handleClick}>
       <FaArrowLeft /> Previous
