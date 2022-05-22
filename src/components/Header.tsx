@@ -3,7 +3,7 @@ import { env } from "../../env";
 import { useUser } from "../hooks/useUser";
 import styled from "@emotion/styled";
 import { PreviousPageButton } from "./PreviousPageButton";
-import { FaGithub } from "react-icons/all";
+import { FaGithub } from "react-icons/fa";
 
 const Container = styled.header`
   display: flex;
