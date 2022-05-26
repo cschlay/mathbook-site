@@ -29,12 +29,13 @@ const StyledHeader = styled.h2`
   text-transform: capitalize;
 `;
 
-export const TableOfContents = ({ items }: Props): JSX.Element => {
-  const toc = buildToc(items);
+export const TableOfContents = (): JSX.Element => {
+  //const toc = buildToc(items);
 
   return (
-    <>
-      {toc.map((chapter) => (
+    <div>
+      XX
+      {/*toc.map((chapter) => (
         <React.Fragment key={chapter.index}>
           <StyledHeader>
             {chapter.index} {chapter.name}
@@ -49,7 +50,7 @@ export const TableOfContents = ({ items }: Props): JSX.Element => {
             ))}
           </StyledUl>
         </React.Fragment>
-      ))}
-    </>
+      ))*/}
+    </div>
   );
 };

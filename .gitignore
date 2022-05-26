@@ -1,6 +1,5 @@
+.next/
 node_modules/
-.cache/
-public
 
 coverage/
 sonarlint/

@@ -1,7 +1,7 @@
+import Link from "next/link";
 import styled from "@emotion/styled";
-import { Link } from "gatsby";
 
-const Container = styled.span`
+const Container = styled.a`
   color: var(--color-brand) !important;
   font-family: var(--font-logo);
   font-size: 1.5rem;
@@ -12,7 +12,7 @@ const Container = styled.span`
 
 export const Logo = () => {
   return (
-    <Link to="/">
+    <Link href="/">
       <Container>Mathbook Project</Container>
     </Link>
   );
