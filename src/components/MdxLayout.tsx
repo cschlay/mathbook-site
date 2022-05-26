@@ -2,6 +2,7 @@ import { LayoutBase } from "./layouts/LayoutBase";
 import { TitleHeader } from "./TitleHeader";
 import { ReactNode } from "react";
 import { MdxFrontmatter } from "../types";
+import Head from "next/head";
 
 interface Props {
   children: ReactNode;
@@ -13,6 +14,9 @@ const MdxLayout = ({ children, meta }: Props) => {
 
   return (
     <LayoutBase>
+      <Head>
+        <title>{title}</title>
+      </Head>
       <TitleHeader>{title}</TitleHeader>
       {children}
     </LayoutBase>

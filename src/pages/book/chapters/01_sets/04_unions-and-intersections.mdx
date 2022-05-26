@@ -1,35 +1,40 @@
----
-title: Unions and Intersections
----
-
 import {Definition} from "../../../../components/MathDisplay/Definition";
 import {Example} from "../../../../components/MathDisplay/Example";
 import {Quoted} from "../../../../components/mdx/Quoted";
+import MdxLayout from "../../../../components/MdxLayout";
 
-The set generator notation <tex value="\{ x \mid f(x) \}" /> creates new set.
+export const meta = {
+  title: "Unions and Intersections"
+}
+
+The set generator notation $\{ x \mid f(x) \}$ creates new set.
 Although the notation only generate sets, it is powerful enough define basic set operations: _union_, _intersection_, and _difference_.
 
 <Quoted>
-
 <Definition name="Union">
-
-  The _union_ of two sets <tex>A</tex> and <tex>B</tex> is the set of all things which are elements of <tex>A</tex>, <tex>B</tex>, or both.
-  <tex value="A \cup B = \{ x \mid x \in A \text{ or } x \in B \}" block />
-
+  The _union_ of two sets $A$ and $B$ is the set of all things which are elements of $A$, $B$, or both.
+  $$
+    A \cup B = \{ x \mid x \in A \text{ or } x \in B \}
+  $$
 </Definition>
-
 </Quoted>
 
-The union operator is useful for combining two sets of things into one such as films seen by two persons can be represented as sets <tex>A</tex> and <tex>B</tex>.
-Now that if they are to go cinema, they can create a new set <tex>C</tex> to determine the films either of them has seen.
+The union operator is useful for combining two sets of things into one such as films seen by two persons can be represented as sets $A$ and $B$.
+Now that if they are to go cinema, they can create a new set $C$ to determine the films either of them has seen.
 
 <Example name="Films seen by two friends">
-
-  Two young friends are trying decide a film to watch, but they can only choose from films either of them owns. Friend <tex>A</tex> is a Star Wars fan and bought films
-  <tex value="A = \{ \textit{A New Hope}, \textit{The Force Awakens} \}," block/>
-  the friend <tex>B</tex> loves superhero films and has a collection
-  <tex value="B = \{ \textit{Iron Man}, \textit{Spiderman 1} \}." block/>
+  Two young friends are trying decide a film to watch, but they can only choose from films either of them owns. Friend $A$ is a Star Wars fan and bought films
+  $$
+    A = \{ \textit{A New Hope}, \textit{The Force Awakens} \},
+  $$
+  the friend $B$ loves superhero films and has a collection
+  $$
+    B = \{ \textit{Iron Man}, \textit{Spiderman 1} \}.
+  $$
   The films they can watch is a set
-  <tex value="C = \{ \textit{A New Hope}, \textit{The Force Awakens}, \textit{Iron Man}, \textit{Spiderman 1} \}." block/>
-
+  $$
+    C = \{ \textit{A New Hope}, \textit{The Force Awakens}, \textit{Iron Man}, \textit{Spiderman 1} \}.
+  $$
 </Example>
+
+export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>

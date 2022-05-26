@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { MathDisplay } from "../MathDisplay/MathDisplay";
+import { Fragment } from "react";
 
 const Container = styled.div`
   display: flex;
@@ -46,12 +47,10 @@ const Palette = ({ id, colors }: PaletteProps) => {
     <StyledPalette>
       <MathDisplay>{`S_${id} = \\{`}</MathDisplay>
       {colors.map((color, i) => (
-        <>
-          <Color key={`${id}-${color}`} code={color}>
-            {color}
-          </Color>
+        <Fragment key={`${id}-${color}`}>
+          <Color code={color}>{color}</Color>
           {i < colors.length - 1 && ","}
-        </>
+        </Fragment>
       ))}
       <MathDisplay>{`\\}`}</MathDisplay>
     </StyledPalette>

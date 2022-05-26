@@ -1,30 +1,30 @@
----
-title: Relations as Sets
----
 import {Definition} from "../../../../components/MathDisplay/Definition";
 import {Example} from "../../../../components/MathDisplay/Example";
 import {Quoted} from "../../../../components/mdx/Quoted";
+import MdxLayout from "../../../../components/MdxLayout";
+
+export const meta = {
+  title: "Relations as Sets"
+}
 
 <Quoted>
-
   <Definition name="Binary relation">
-    A <em>binary relation</em> on a set <tex>A</tex> is a subset of <tex>A^2 = A \times A</tex>.
-    If <tex>R \subseteq A^2</tex> is a binary relation on <tex>A</tex> and <tex>x, y \in A</tex>, we write <tex>xRy</tex> for <tex>(x, y) \in R</tex>.
+    A _binary relation_ on a set $A$ is a subset of $A^2 = A \times A$.
+    If $R \subseteq A^2$ is a binary relation on $A$ and $x, y \in A$, we write $xRy$ for $(x, y) \in R$.
   </Definition>
-
 </Quoted>
 
-The relation is indeed a rule that defines the set <tex>R</tex> of pairs.
-The most basic relation is <em>identity relation</em> where elements relate themselves <tex value="(x, x) \in R"/> when <tex value="x \in A"/>, denoted as <tex value="\text{Id}_A"/>.
+The relation is indeed a rule that defines the set $R$ of pairs.
+The most basic relation is _identity relation_ where elements relate themselves $(x, x) \in R$ when $x \in A$, denoted as $\text{Id}_A$.
 
 <Example>
-  Let <tex>{"A = \\{ \\text{shorts}, \\text{t-shirt}, \\text{sweater}, \\text{socks} \\}"}</tex>,
-  when we define a relation "items that are normally worn together" the result would be <tex>{"R = \\{ (\\text{shorts}, \\text{t-shirt}), (\\text{sweater}, \\text{socks}) \\}"}</tex>.
+  Let $A = \{ \textit{shorts}, \textit{t-shirt}, \textit{sweater}, \textit{socks} \}$,
+  when we define a relation "items that are normally worn together" the result would be $R = \{ (\textit{shorts}, \textit{t-shirt}), (\textit{sweater}, \textit{socks}) \}$.
 </Example>
 
 This may remind you of _relational databases_.
-Each row consist of pairs in <tex>R</tex> such as <tex value="(\text{shorts}, \text{t-shirt})"/> and elements are the columns.
-If we were to define three columns, we would need to define relation of relations <tex value="((\text{shorts}, \text{t-shirt}), \text{sandals})"/>.
+Each row consist of pairs in $R$ such as $(\textit{shorts}, \textit{t-shirt})$ and elements are the columns.
+If we were to define three columns, we would need to define relation of relations $((\textit{shorts}, \textit{t-shirt}), \textit{sandals})$.
 
 ## Special Properties of Relations
 
@@ -36,18 +36,20 @@ If we were to define three columns, we would need to define relation of relation
   It turns out that some of these special properties are especially important: orders and equivalence relations.
 
   <Definition name="Reflexivity">
-    A relation <tex>R \subseteq A^2</tex> is <em>reflexive</em> iff, for every <tex>x \in A</tex>, <tex>xRx</tex>.
+    A relation $R \subseteq A^2$ is _reflexive_ iff, for every $x \in A$, $xRx$.
   </Definition>
 
   <Definition name="Transitivity">
-    A relation <tex>R \subseteq A^2</tex> is <em>transitive</em> iff, whenever <tex>xRy</tex> and <tex>yRz</tex>, then also <tex>xRz</tex>.
+    A relation $R \subseteq A^2$ is _transitive_ iff, whenever $xRy$ and $yRz$, then also $xRz$.
   </Definition>
 
   <Definition name="Symmetry">
-    A relation <tex>R \subseteq A^2</tex> is <em>symmetric</em> iff, whenever <tex>xRy</tex>, then also <tex>yRx</tex>.
+    A relation $R \subseteq A^2$ is _symmetric_ iff, whenever $xRy$, then also $yRx$.
   </Definition>
 
 </Quoted>
 
-The _anti-symmetric_ relation is the opposite of symmetric relation, where the reverse is never true except when <tex value="x = y"/>.
+The _anti-symmetric_ relation is the opposite of symmetric relation, where the reverse is never true except when $x = y$.
 However, the relation may not be reflexive.
+
+export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>

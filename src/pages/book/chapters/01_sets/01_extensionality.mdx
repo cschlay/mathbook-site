@@ -15,41 +15,52 @@ export const meta = {
   A _set_ is a collection of objects.
   The objects in the set are called _elements_ of the set.
 
-  - If $x$ is an element of a set <tex>S</tex>, we write <tex value="x \in S"/>;
-  - If not, we write <tex value="x \notin S"/>.
-  - The set which has no elements is called _empty set_ and denoted <tex value="\emptyset"/>.
+  - If $x$ is an element of a set $S$, we write $x \in S$;
+  - If not, we write $x \notin S$.
+  - The set which has no elements is called _empty set_ and denoted $\emptyset$.
 
 
   It does not matter how we specify the set, or how we order its elements or how many times we count its elements.
   All that matters are what its elements are.
 
   <Definition name="Extensionality">
-    If <tex>A</tex> and <tex>B</tex> are sets, then <tex>A = B</tex> if and only if every element of <tex>A</tex>
-    {' '}is also an element of <tex>B</tex>, and vice versa.
+
+    If $A$ and $B$ are sets, then $A = B$ if and only if every element of $A$
+    {' '}is also an element of $B$, and vice versa.
+
   </Definition>
 
-  In general, when we have objects <tex value="a_1, \ldots, a_n"/>, then <tex value="\{a_1, \ldots, a_n\}"/> is _the_ set <tex>S</tex> whose elements are <tex value="a_1, \ldots, a_n"/>.
+  In general, when we have objects $a_1, \ldots, a_n$, then $\{ a_1, \ldots, a_n \}$ is _the_ set $S$ whose elements are $a_1, \ldots, a_n$.
   We emphasise the word _the_, since extensionality tells us that there can be only one such set.
   Indeed, extensionality also licenses the following:
-
-  <tex block={true} value="S = \{ a, a, b \} = \{ a, b \} = \{ b, a \}."/>
+  $$
+    S = \{ a, a, b \} = \{ a, b \} = \{ b, a \}
+  $$
 
 </Quoted>
 
 We usually don't write out duplicate elements since they have no meaning as extensionality reduces them to same set.
-In LaTeX sets are written as `\{ a, b \}`, <tex value="\in"/> is `\in`, <tex value="\not\in"/> is `\not\in`, and empty set `\emptyset`.
+In $\LaTeX$ the symbols related to sets are:
+
+| Symbol      | LaTex       |
+|-------------|-------------|
+| $\{$        | `\{`        |
+| $\}$        | `\}`        |
+| $\in$       | `\in`       |
+| $\notin$    | `\notin`    |
+| $\emptyset$ | `\emptyset` |
+
 
 <Example name="Color palette">
-  <p>
-    Colors used in a website design can be thought as a set.
-    Choosing two blues of the same tone would result in one blue.
-    If two websites use same colors, they use same set of colors.
-  </p>
+
+  Colors used in a website design can be thought as a set.
+  Choosing two blues of the same tone would result in one blue.
+  If two websites use same colors, they use same set of colors.
+
   <ColorPaletteExample />
-  <p>
-    The color palettes <tex>S_1</tex> and <tex>S_3</tex> are same because the elements (colors) are same and the order does not matter.
-    The set <tex>S_2</tex> is different as only one color matches.
-  </p>
+
+  The color palettes $S_1$ and $S_3$ are same because the elements (colors) are same and the order does not matter.
+  The set $S_2$ is different as only one color matches.
 </Example>
 
 We will later use the sets in _relational algebra_ which is the foundation of SQL databases.
@@ -77,20 +88,28 @@ print(contains_dairy({ "flour", "milk", "butter" }))
 <Quoted>
 
   Frequently, we’ll specify a set by some property that its elements share.
-  We’ll use the following shorthand notation for that: <tex value="\{ x \mid f(x) \}," block={true} /> where the
-  <tex>f(x)</tex> stands for the property that <tex>x</tex> has to have in order to be counted among
+  We’ll use the following shorthand notation for that:
+
+  $$
+    \{ x \mid f(x) \}
+  $$
+
+  where the $f(x)$ stands for the property that $x$ has to have in order to be counted among
   the elements of the set. The property can be thought as a function that generate the elements.
-  The symbol <tex value="\mid"/> is written as `\mid`.
+  The symbol $\mid$ is written as `\mid`.
 
 </Quoted>
 
 <Example name="Generating serving sizes">
-  <p>
-    We want to serve potatoes to our guests.
-    The head cook decided to serve them in multiples of <tex>1.5</tex> where base amount is <tex>{"100\\text{g}"}</tex>.
-    The maximum serving is no more than <tex>{"500\\text{g}"}</tex>. To generate all sizes we write
-  </p>
-  <tex block={true}>{"S = \\{ x \\cdot 1.5 \\mid x \\in \\mathbb{N} \\land x \\cdot 1.5 \\le 500 \\} = \\{ 150, 225, 337.5 \\}."}</tex>
+
+  We want to serve potatoes to our guests.
+  The head cook decided to serve them in multiples of $1.5$ where base amount is $100\text{g}$.
+  The maximum serving is no more than $500\text{g}$. To generate all sizes we write
+
+  $$
+    S = \{ x \cdot 1.5 \mid x \in \mathbb{N} \land x \cdot 1.5 \le 500 \} = \{ 150, 225, 337.5 \}
+  $$
+
 </Example>
 
 In programming, it is useful to generate values that follow certain rules. Were we writing a program of the previous example

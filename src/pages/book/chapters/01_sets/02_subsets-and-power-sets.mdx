@@ -1,36 +1,35 @@
----
-title: Subsets and Power Sets
----
-import {GiCheeseWedge, GiDonerKebab, GiHamShank, GiTomato} from "react-icons/gi";
 import {Definition} from "../../../../components/MathDisplay/Definition";
 import {Example} from "../../../../components/MathDisplay/Example";
 import {Problem} from "../../../../components/MathDisplay/Problem";
 import {Proposition} from "../../../../components/MathDisplay/Proposition";
 import {Quoted} from "../../../../components/mdx/Quoted";
+import MdxLayout from "../../../../components/MdxLayout";
+
+export const meta = {
+  title: "Subsets and Power Sets"
+}
 
 <Quoted source="olp">
-
   We will often want to compare sets. One kind of comparison is: _everything in one set is in the other (set) too_.
   This situation is sufficiently important for us to introduce some new notation.
 
   <Definition name="Subset">
-    If every element of a set <tex>A</tex> is also an element of <tex>B</tex>,
-    then we say that <tex>A</tex> is a <em>subset</em> of <tex>B</tex>, and we write <tex>A \subseteq B</tex>.
-    If <tex>A \subseteq B</tex> but <tex>A \neq B</tex>,
-    we write <tex>A \subset B</tex>,
-    and say that <tex>A</tex> is a <em>proper subset</em> of <tex>B</tex>.
+    If every element of a set $A$ is also an element of $B$,
+    then we say that $A$ is a _subset_ of $B$, and we write $A \subseteq B$.
+    If $A \subseteq B$ but $A \neq B$,
+    we write $A \subset B$,
+    and say that $A$ is a _proper subset_ of $B$.
   </Definition>
-
 </Quoted>
 
-The notation <tex value="\subset" /> is used because they are similar to equality operators <tex value="\leq"/> and <tex value="<"/>. You may also see <tex value="\subsetneq"/> in other literature.
+The notation $\subset$ is used because they are similar to equality operators $\leq$ and $<$. You may also see $\subsetneq$ in other literature.
 The corresponding latex symbols are `\subset`, `\subseteq`, and `\subsetneq`.
 
 <Quoted source="olp">
   <Example name="Basics">
-    Every set is a subset of itself, and <tex>\emptyset</tex> is a subset of every set.
-    The set of even numbers is a subset of the set of natural numbers. Also <tex>{"\\{a,b\\} \\subseteq \\{a,b,c\\}"}</tex>.
-    But <tex>{"\\{a,b,e\\}"}</tex> is not a subset of <tex>{"\\{a,b,c\\}"}</tex>.
+    Every set is a subset of itself, and $\emptyset$ is a subset of every set.
+    The set of even numbers is a subset of the set of natural numbers. Also $\{a, b\} \subseteq \{a, b, c\}$.
+    But $\{a, b, e\}$ is not a subset of $\{a, b, c\}$.
   </Example>
 </Quoted>
 
@@ -39,11 +38,9 @@ The chefs check that they have chosen ingredients from available sets before pla
 The managers compare software features against the requirements.
 
 <Example name="Pizza toppings">
-  Let all pizza toppings be a <tex value="A = \{ ham, kebab, cheese, tomato \}." block={true}/>
+  Let all pizza toppings be a $A = \{ ham, kebab, cheese, tomato \}$.
   Choosing any subset of toppings would result in a pizza that have name e.g. ham or cheese pizza.
-  A kebab pizza would be a proper subset <tex value="B = \{ kebab, cheese \}," block={true} /> so <tex>B \subset A</tex>.
-  If were replace the names with icons, the sets would be <span className="flex-center"><tex value="A = \{"/><GiHamShank/>, <GiDonerKebab />, <GiCheeseWedge/>, <GiTomato/> <tex value="\}"/></span> and <span className="flex-center"><tex value="B = \{"/><GiDonerKebab/>, <GiCheeseWedge/> <tex value="\}"/></span>.
-
+  A kebab pizza would be a proper subset $B = \{ kebab, cheese \}$ so $B \subset A$.
 </Example>
 
 In Python the example would be written as
@@ -57,38 +54,37 @@ print(kebab_pizza.issubset(pizza_toppings))
 ```
 
 <Quoted>
-
 <Proposition>
-  <tex>A = B</tex>{' '}
-  iff both <tex>A \subseteq B</tex> and <tex>B \subseteq A</tex>.
+  $A = B$ iff both $A \subseteq B$ and $B \subseteq A$.
 </Proposition>
-
 <Definition name="Power Set">
-  The set consisting of all subsets of a set <tex>A</tex> is called <em>power set of</em>{' '}
-  <tex>A</tex>
-  , written <tex>\wp(A)</tex>:
-  <tex value="\wp(A) = \{ B \mid B \subseteq A \}." block={true}/>
+  The set consisting of all subsets of a set $A$ is called _power set of_ $A$, written $\wp(A)$:
+  $$
+    \wp(A) = \{ B \mid B \subseteq A \}.
+  $$
 </Definition>
-
 </Quoted>
 
 The symbol <tex value="\wp"/> can be written `\wp` in TeX (perhaps short for _Weierstrass p-function_).
-You may also encounter different power set notations that uses different styles of "p" such as <tex value="P(A)"/>.
+You may also encounter different power set notations that uses different styles of "p" such as $P(A)$.
 
 <Example name="Different soups">
   Soups can have any combination of ingredients and still taste good.
-  The chef wants a list of all soups he can make from a set of ingredients <tex
-  value="S = \{ salmon, potato \}." block={true}/><span className="flex-center"></span>
+  The chef wants a list of all soups he can make from a set of ingredients $S = \{ salmon, potato \}$.
   That power set that describes all combinations is
-  <tex block={true} value="\wp(S) = \{ \emptyset, \{ salmon \}, \{ potato \}, \{ potato, carrot \} \}."/>
+  $$
+    \wp(S) = \{ \emptyset, \{ salmon \}, \{ potato \}, \{ potato, carrot \} \}.
+  $$
 </Example>
 
 <Quoted>
   <Problem>
-    <p>List all subsets of <tex value="\{ a, b, c, d\}"/>.</p>
+    List all subsets of $\{ a, b, c, d\}$.
   </Problem>
 
   <Problem>
-    Show that if <tex value="A"/> has <tex value="n"/> elements, then <tex value="\wp(A)"/> has <tex value="2^n" /> elements.
+    Show that if $A$ has $n$ elements, then $\wp(A)$ has $2^n$ elements.
   </Problem>
 </Quoted>
+
+export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>
