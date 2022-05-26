@@ -1,26 +1,29 @@
 import { Problem } from "../MathDisplay/Problem";
 import { Textarea } from "../atoms/Textarea";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Button } from "../atoms/Button";
 import { ErrorMessage } from "../atoms/ErrorMessage";
 import { SolvedLabel } from "../atoms/SolvedLabel";
 import { MathDisplay } from "../MathDisplay/MathDisplay";
 import { env } from "../../../env";
 import { useUser } from "../../hooks/useUser";
+import useSWR from "swr";
+import { ExerciseProblem } from "../../types";
 
 interface Props {
   /** Write the description as child element. */
   children: ReactNode;
   answer?: RegExp;
-  slug?: string;
+  slug: string;
 }
 
 export const LatexExercise = ({ slug, answer, children }: Props) => {
   const user = useUser();
+  const { data, mutate } = useSWR<ExerciseProblem>(`/problems/${slug}`);
 
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
-  const [solved, setSolved] = useState(false);
+  const [solvedAt, setSolvedAt] = useState("");
 
   const submit = async (): Promise<boolean> => {
     if (!slug) {
@@ -53,14 +56,27 @@ export const LatexExercise = ({ slug, answer, children }: Props) => {
       setError("Your answer was incorrect, check the spaces.");
     }
     user.reload();
-    setSolved(correct);
+    setSolvedAt(correct);
+    await mutate();
   };
+
+  useEffect(() => {
+    if (data && data.submission) {
+      setInput(data.submission.data.input);
+      setSolvedAt(data.submission.solved_at);
+    }
+  }, [data]);
+
+  if (!data) {
+    // TODO: Show auth error!
+    return null;
+  }
 
   return (
     <Problem>
       {children}
       <Textarea
-        disabled={solved}
+        disabled={solvedAt !== ""}
         onChange={(value) => {
           setInput(value);
           setError("");
@@ -69,8 +85,8 @@ export const LatexExercise = ({ slug, answer, children }: Props) => {
       />
       <MathDisplay children={input} block={true} />
 
-      {solved ? (
-        <SolvedLabel />
+      {solvedAt ? (
+        <SolvedLabel points={data.points} />
       ) : (
         <div>
           <Button onClick={handleSubmit}>Submit</Button>

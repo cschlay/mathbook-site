@@ -8,7 +8,6 @@ import { Problem } from "./MathDisplay/Problem";
 import { Proposition } from "./MathDisplay/Proposition";
 import { TitleHeader } from "./TitleHeader";
 import { ReactNode } from "react";
-import { PreviousPageButton } from "./PreviousPageButton";
 
 interface Props {
   children: ReactNode;

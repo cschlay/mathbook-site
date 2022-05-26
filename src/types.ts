@@ -18,3 +18,14 @@ export interface User {
   username: string;
   points: number;
 }
+
+type SubmissionType = { input: string };
+
+export interface ExerciseProblem {
+  slug: string;
+  points: number;
+  submission?: {
+    data: SubmissionType;
+    solved_at: string;
+  };
+}
