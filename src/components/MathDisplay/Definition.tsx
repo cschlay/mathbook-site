@@ -8,8 +8,8 @@ interface Props {
 
 export const Definition = ({ children, name }: Props) => {
   return (
-    <EnvironmentContainer>
-      <b>Definition{name && ` (${name})`}.</b> {children}
+    <EnvironmentContainer type="Definition" summary={name}>
+      {children}
     </EnvironmentContainer>
   );
 };

@@ -3,12 +3,13 @@ import { EnvironmentContainer } from "./EnvironmentContainer";
 
 interface Props {
   children: ReactNode;
+  points?: number;
 }
 
-export const Problem = ({ children }: Props) => {
+export const Problem = ({ children, points }: Props) => {
   return (
-    <EnvironmentContainer>
-      <b>Problem.</b> {children}
+    <EnvironmentContainer type="Problem" summary={points && `${points} points`}>
+      {children}
     </EnvironmentContainer>
   );
 };

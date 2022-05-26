@@ -73,7 +73,7 @@ export const LatexExercise = ({ slug, answer, children }: Props) => {
   }
 
   return (
-    <Problem>
+    <Problem points={data.points}>
       {children}
       <Textarea
         disabled={solvedAt !== ""}
