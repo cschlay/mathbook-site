@@ -1,6 +1,6 @@
+import { useEffect, useState } from "react";
 import { Problem } from "../MathDisplay/Problem";
 import { Textarea } from "../atoms/Textarea";
-import { ReactNode, useEffect, useState } from "react";
 import { Button } from "../atoms/Button";
 import { ErrorMessage } from "../atoms/ErrorMessage";
 import { SolvedLabel } from "../atoms/SolvedLabel";
@@ -15,12 +15,11 @@ import ReactMarkdown from "react-markdown";
 
 interface Props {
   /** Write the description as child element. */
-  children: ReactNode;
   answer?: RegExp;
   slug: string;
 }
 
-export const LatexExercise = ({ slug, answer, children }: Props) => {
+export const LatexExercise = ({ slug, answer }: Props) => {
   const user = useUser();
   const { data, mutate } = useSWR<ExerciseProblem>(`/problems/${slug}`);
 
