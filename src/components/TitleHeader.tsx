@@ -1,15 +1,13 @@
-import * as React from "react";
-import { Helmet } from "react-helmet";
+import { ReactNode } from "react";
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-export const TitleHeader = ({ children }: Props): JSX.Element => {
+export const TitleHeader = ({ children }: Props) => {
   return (
     <>
       <h1>{children}</h1>
-      <Helmet title="Mathbook Project" defer={false} />
     </>
   );
 };
