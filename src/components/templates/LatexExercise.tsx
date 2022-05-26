@@ -58,7 +58,6 @@ export const LatexExercise = ({ slug, answer }: Props) => {
       setError("Your answer was incorrect, check the spaces.");
     }
     user.reload();
-    setSolvedAt(correct);
     await mutate();
   };
 
@@ -93,7 +92,7 @@ export const LatexExercise = ({ slug, answer }: Props) => {
       {solvedAt ? (
         <SolvedLabel points={data.points} />
       ) : (
-        <div>
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
           <Button onClick={handleSubmit}>Submit</Button>
           <ErrorMessage>{error}</ErrorMessage>
         </div>
