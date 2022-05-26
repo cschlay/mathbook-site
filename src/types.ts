@@ -30,3 +30,7 @@ export interface ExerciseProblem {
     solved_at: string;
   };
 }
+
+export interface MdxFrontmatter {
+  title: string;
+}

@@ -1,12 +1,13 @@
 import withNextMdx from "@next/mdx"
-import remarkMath from "remark-math";
+import rehypeHighlight from "rehype-highlight";
 import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
 
 const withMdx = withNextMdx({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [rehypeHighlight, rehypeKatex],
     providerImportSource: "@mdx-js/react",
   },
 })

@@ -6,6 +6,7 @@ const Container = styled.a`
   font-family: var(--font-logo);
   font-size: 1.5rem;
   &:hover {
+    cursor: pointer;
     opacity: 0.8;
   }
 `;

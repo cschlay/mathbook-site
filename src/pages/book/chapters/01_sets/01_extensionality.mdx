@@ -1,15 +1,14 @@
----
-title: Extensionality
-sources:
-  - olp
----
-
 import {ColorPaletteExample} from "../../../../components/examples/ColorPaletteExample";
 import {Definition} from "../../../../components/MathDisplay/Definition";
 import {Example} from "../../../../components/MathDisplay/Example";
 import {LatexExercise} from "../../../../components/templates/LatexExercise";
 import {Problem} from "../../../../components/MathDisplay/Problem";
 import {Quoted} from "../../../../components/mdx/Quoted";
+import MdxLayout from "../../../../components/MdxLayout";
+
+export const meta = {
+  title: "Extensionality"
+}
 
 <Quoted>
 
@@ -110,3 +109,5 @@ Typical use cases may be related to business logic where certain values need to 
 The notation in programming languages tend to get longer and more complex than in math so use it only for simple cases.
 
 <LatexExercise answer={/S = \\{ 2\^n \\mid n \\in \\mathbb{N} \\}/} slug="set-generator" />
+
+export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>
