@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Spectral:ital,wght@0,300;1,300&display=swap');
 
 :root {
     --color-bg: #faf8f7;
@@ -8,6 +8,7 @@
     --color-brand: #1b1364;
     --color-brand-on: #f0eef8;
 
+    --font-logo: 'Lavishly Yours', cursive;
     --font-headers: 'Spectral', serif;
     --font-body: 'Spectral', serif;
 }
@@ -16,6 +17,10 @@ body {
     background-color: var(--color-bg);
     font-family: var(--font-headers);
     line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
 }
 
 main {

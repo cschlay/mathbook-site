@@ -1,18 +1,23 @@
 import { Button } from "./atoms/Button";
+import { FaGithub } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
+import { Logo } from "./Logo";
 import { env } from "../../env";
 import { useUser } from "../hooks/useUser";
 import styled from "@emotion/styled";
-import { PreviousPageButton } from "./PreviousPageButton";
-import { FaGithub } from "react-icons/fa";
+import { useTablet } from "../hooks/useTablet";
 
 const Container = styled.header`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding-top: 1rem;
+  margin-bottom: 2rem;
 `;
 
 export const Header = () => {
   const { user } = useUser();
+  const isTablet = useTablet();
 
   const handleLogin = () => {
     fetch(`${env.API_HOST}/login`)
@@ -27,10 +32,14 @@ export const Header = () => {
 
   return (
     <Container>
-      <PreviousPageButton />
+      <Logo />
       {user ? (
         <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
-          {user.points} points <Button onClick={handleLogout}>Logout</Button>
+          <span>{user.points} points</span>
+          <Button onClick={handleLogout}>
+            <FiLogOut />
+            {isTablet && "Logout"}
+          </Button>
         </div>
       ) : (
         <Button onClick={handleLogin}>

@@ -24,6 +24,7 @@
     "@emotion/styled": "11.8.1",
     "@mdx-js/mdx": "1.6.22",
     "@mdx-js/react": "1.6.22",
+    "beautiful-react-hooks": "1.2.0",
     "d3": "7.4.4",
     "gatsby": "4.13.1",
     "gatsby-plugin-manifest": "4.13.0",
