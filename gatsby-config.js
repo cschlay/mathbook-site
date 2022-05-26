@@ -19,10 +19,6 @@ module.exports = {
           // eslint-disable-next-line no-undef
           default: require.resolve("./src/components/MdxLayout.tsx"),
         },
-        // eslint-disable-next-line no-undef
-        remarkPlugins: [require("remark-math")],
-        // eslint-disable-next-line no-undef
-        rehypePlugins: [require("rehype-katex")],
         gatsbyRemarkPlugins: [
           {
             // https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/

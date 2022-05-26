@@ -4,10 +4,10 @@ import { ChangeEvent } from "react";
 const StyledTextarea = styled.textarea`
   border: 1px solid lightgray;
   border-radius: 0.25rem;
+  margin: 0.5rem 0;
   padding: 0.5rem;
   width: calc(100% - 1rem);
   resize: none;
-  margin-bottom: 1rem;
 
   &:focus {
     border: 1px solid lightblue;

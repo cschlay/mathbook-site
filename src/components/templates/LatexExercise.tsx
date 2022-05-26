@@ -9,6 +9,9 @@ import { env } from "../../../env";
 import { useUser } from "../../hooks/useUser";
 import useSWR from "swr";
 import { ExerciseProblem } from "../../types";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import ReactMarkdown from "react-markdown";
 
 interface Props {
   /** Write the description as child element. */
@@ -74,7 +77,11 @@ export const LatexExercise = ({ slug, answer, children }: Props) => {
 
   return (
     <Problem points={data.points}>
-      {children}
+      <ReactMarkdown
+        children={data.description}
+        remarkPlugins={[remarkMath]}
+        rehypePlugins={[rehypeKatex]}
+      />
       <Textarea
         disabled={solvedAt !== ""}
         onChange={(value) => {
@@ -84,7 +91,6 @@ export const LatexExercise = ({ slug, answer, children }: Props) => {
         value={input}
       />
       <MathDisplay children={input} block={true} />
-
       {solvedAt ? (
         <SolvedLabel points={data.points} />
       ) : (

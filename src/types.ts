@@ -23,6 +23,7 @@ type SubmissionType = { input: string };
 
 export interface ExerciseProblem {
   slug: string;
+  description: string;
   points: number;
   submission?: {
     data: SubmissionType;
