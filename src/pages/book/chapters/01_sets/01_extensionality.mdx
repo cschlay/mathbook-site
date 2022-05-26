@@ -16,9 +16,9 @@ import {Quoted} from "../../../../components/mdx/Quoted";
   A _set_ is a collection of objects.
   The objects in the set are called _elements_ of the set.
 
-  - If $x$ is an element of a set $S$, we write $x \in S$;
-  - If not, we write $x \notin S$.
-  - The set which has no elements is called _empty set_ and denoted $\emptyset$.
+  - If <tex>x</tex> is an element of a set <tex>S</tex>, we write <tex value="x \in S"/>;
+  - If not, we write <tex value="x \notin S"/>.
+  - The set which has no elements is called _empty set_ and denoted <tex value="\emptyset"/>.
 
 
   It does not matter how we specify the set, or how we order its elements or how many times we count its elements.
@@ -29,8 +29,7 @@ import {Quoted} from "../../../../components/mdx/Quoted";
     {' '}is also an element of <tex>B</tex>, and vice versa.
   </Definition>
 
-  In general, when we have objects $a_1, \ldots, a_n$, then <tex value="\{a_1, \ldots, a_n\}"/> is _the_ set $S$ whose elements are
-  $a_1, \ldots, a_n$.
+  In general, when we have objects <tex value="a_1, \ldots, a_n"/>, then <tex value="\{a_1, \ldots, a_n\}"/> is _the_ set <tex>S</tex> whose elements are <tex value="a_1, \ldots, a_n"/>.
   We emphasise the word _the_, since extensionality tells us that there can be only one such set.
   Indeed, extensionality also licenses the following:
 
@@ -39,7 +38,7 @@ import {Quoted} from "../../../../components/mdx/Quoted";
 </Quoted>
 
 We usually don't write out duplicate elements since they have no meaning as extensionality reduces them to same set.
-In LaTeX sets are written as `\{ a, b \}`, $\in$ is `\in`, $\not\in$ is `\not\in`, and empty set `\emptyset`.
+In LaTeX sets are written as `\{ a, b \}`, <tex value="\in"/> is `\in`, <tex value="\not\in"/> is `\not\in`, and empty set `\emptyset`.
 
 <Example name="Color palette">
   <p>
@@ -85,9 +84,9 @@ print(contains_dairy({ "flour", "milk", "butter" }))
 
   Frequently, we’ll specify a set by some property that its elements share.
   We’ll use the following shorthand notation for that: <tex value="\{ x \mid f(x) \}," block={true} /> where the
-  $f(x)$ stands for the property that $x$ has to have in order to be counted among
+  <tex>f(x)</tex> stands for the property that <tex>x</tex> has to have in order to be counted among
   the elements of the set. The property can be thought as a function that generate the elements.
-  The symbol $\mid$ is written as `\mid`.
+  The symbol <tex value="\mid"/> is written as `\mid`.
 
 </Quoted>
 
