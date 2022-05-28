@@ -10,7 +10,6 @@
     "moduleResolution": "Node",
     "noImplicitAny": false,
     "removeComments": true,
-    "preserveConstEnums": false,
     "sourceMap": true,
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
