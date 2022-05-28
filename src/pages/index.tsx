@@ -1,10 +1,14 @@
-import { TableOfContents } from "../molecules/TableOfContents";
 import { LayoutBase } from "../components/layouts/LayoutBase";
+import { TableOfContents } from "../molecules/TableOfContents";
 import { TitleHeader } from "../components/TitleHeader";
+import Head from "next/head";
 
 const IndexPage = () => {
   return (
     <LayoutBase>
+      <Head>
+        <title>Mathbook Project</title>
+      </Head>
       <main>
         <TitleHeader>Mathbook Project (Logic Edition)</TitleHeader>
         <p>
