@@ -11,9 +11,7 @@
     "start": "next start",
     "test": "jest",
     "coverage": "jest --collectCoverage",
-    "lint": "eslint . --ext .ts",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "lint": "next lint"
   },
   "dependencies": {
     "@emotion/react": "11.9.0",
