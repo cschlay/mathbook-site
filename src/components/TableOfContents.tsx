@@ -1,7 +1,5 @@
-import * as React from "react";
 import { Link } from "./Link";
 import { SectionItem } from "../types";
-import { buildToc } from "../utils/buildToc";
 import styled from "@emotion/styled";
 
 interface Props {
@@ -29,12 +27,17 @@ const StyledHeader = styled.h2`
   text-transform: capitalize;
 `;
 
-export const TableOfContents = (): JSX.Element => {
-  //const toc = buildToc(items);
-
+export const TableOfContents = () => {
   return (
     <div>
-      XX
+      <StyledHeader>Sets</StyledHeader>
+      <StyledUl>
+        <li>
+          <Link href="/book/chapters/01_sets/01_extensionality">
+            Extensionality
+          </Link>
+        </li>
+      </StyledUl>
       {/*toc.map((chapter) => (
         <React.Fragment key={chapter.index}>
           <StyledHeader>
