@@ -1,7 +1,9 @@
 import {Definition} from "../../../components/MathDisplay/Definition";
 import {Example} from "../../../components/MathDisplay/Example";
 import {Quoted} from "../../../components/mdx/Quoted";
-import MdxLayout from "../../../components/MdxLayout";
+import MdxLayout from "../../../components/MdxLayout"; import {
+  LatexExercise
+} from "../../../components/templates/LatexExercise";
 
 export const meta = {
   title: "Unions and Intersections"
@@ -31,10 +33,11 @@ Now that if they are to go cinema, they can create a new set $C$ to determine th
   $$
     B = \{ \textit{Iron Man}, \textit{Spiderman 1} \}.
   $$
-  The films they can watch is a set
+  The films they can watch is a union $A \cup B$ which forms a new set
   $$
     C = \{ \textit{A New Hope}, \textit{The Force Awakens}, \textit{Iron Man}, \textit{Spiderman 1} \}.
   $$
 </Example>
+
 
 export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>

@@ -12,6 +12,7 @@ import { ExerciseProblem } from "../../types";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import ReactMarkdown from "react-markdown";
+import { AuthRequired } from "../../molecules/AuthRequired";
 
 interface Props {
   /** Write the description as child element. */
@@ -69,8 +70,7 @@ export const LatexExercise = ({ slug, answer }: Props) => {
   }, [data]);
 
   if (!data) {
-    // TODO: Show auth error!
-    return null;
+    return <AuthRequired message="This exercises requires an account." />;
   }
 
   return (
