@@ -1,6 +1,6 @@
 import * as React from "react";
 import { LicenseAttribution } from "./LicenseAttribution";
-import { Link } from "./Link";
+import { Link } from "../atoms/Link";
 import styled from "@emotion/styled";
 
 const StyledFooter = styled.footer`

@@ -6,7 +6,7 @@ import { ErrorMessage } from "../atoms/ErrorMessage";
 import { SolvedLabel } from "../atoms/SolvedLabel";
 import { MathDisplay } from "../MathDisplay/MathDisplay";
 import { env } from "../../../env";
-import { useUser } from "../../atoms/hooks/useUser";
+import { useUser } from "../../hooks/useUser";
 import useSWR from "swr";
 import { ExerciseProblem } from "../../types";
 import remarkMath from "remark-math";

@@ -1,4 +1,4 @@
-import { TableOfContents } from "../components/TableOfContents";
+import { TableOfContents } from "../molecules/TableOfContents";
 import { LayoutBase } from "../components/layouts/LayoutBase";
 import { TitleHeader } from "../components/TitleHeader";
 

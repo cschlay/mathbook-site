@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "./Link";
+import { Link } from "../atoms/Link";
 import styled from "@emotion/styled";
 
 const Container = styled.p`
