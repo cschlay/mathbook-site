@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "@emotion/styled";
 
-const Container = styled.a`
+const Container = styled.span`
   color: var(--color-brand) !important;
   font-family: var(--font-logo);
   font-size: 1.5rem;
@@ -14,7 +14,10 @@ const Container = styled.a`
 export const Logo = () => {
   return (
     <Link href="/">
-      <Container>Mathbook Project</Container>
+      <a>
+        {" "}
+        <Container>Mathbook Project</Container>
+      </a>
     </Link>
   );
 };

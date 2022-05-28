@@ -1,9 +1,8 @@
 import {Definition} from "../../../components/MathDisplay/Definition";
 import {Example} from "../../../components/MathDisplay/Example";
+import {Problem} from "../../../components/MathDisplay/Problem";
 import {Quoted} from "../../../components/mdx/Quoted";
-import MdxLayout from "../../../components/MdxLayout"; import {
-  LatexExercise
-} from "../../../components/templates/LatexExercise";
+import MdxLayout from "../../../components/MdxLayout";
 
 export const meta = {
   title: "Unions and Intersections"
@@ -39,5 +38,35 @@ Now that if they are to go cinema, they can create a new set $C$ to determine th
   $$
 </Example>
 
+<Quoted>
+We can also consider a "dual" operation to union. This is the operation
+that forms the set of all elements that are elements of $A$ and are also elements
+of $B$. This operation is called _intersection_. Two sets are called _disjoint_ if their intersection is empty.
+<Definition name="Intersection">
+  The _intersection_ of two sets $A$ and $B$, written $A \cap B$, is the set of all things which are elements of both $A$ and $B$.
+  $$
+    A \cap B = \{ x \mid x \in A \text{ and } x \in B\}
+  $$
+</Definition>
+</Quoted>
+
+A practical use is finding common elements of things, e.g. in dating finding common interests and expectations is important.
+You may discuss food you both like or activities you would enjoy doing together.
+A way to represent this situation is to define an intersection of interests $C = A \cap B$.
+If there is a set of things $D$ you cannot do due to life situation e.g. having children, you can define a set of things you can do using
+_difference_ operation.
+
+<Quoted>
+<Definition name="Difference">
+  The _set difference_ $A \setminus B$ is the set of all elements of $A$ which are not also element of $B$, i.e,
+  $$
+    A \setminus B = \{ x \mid x \in A \text{ and } x \notin B \}.
+  $$
+</Definition>
+</Quoted>
+
+<Problem>
+  Implement set data structure, and the basic operations described in this section.
+</Problem>
 
 export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>
