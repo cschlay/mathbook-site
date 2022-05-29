@@ -1,87 +1,48 @@
 import { useEffect, useState } from "react";
 import { Problem } from "../MathDisplay/Problem";
 import { Textarea } from "../atoms/Textarea";
-import { Button } from "../atoms/Button";
+import { Button } from "../../atoms/Button";
 import { ErrorMessage } from "../atoms/ErrorMessage";
 import { SolvedLabel } from "../atoms/SolvedLabel";
 import { MathDisplay } from "../MathDisplay/MathDisplay";
-import { env } from "../../../env";
-import { useUser } from "../../hooks/useUser";
-import useSWR from "swr";
-import { ExerciseProblem } from "../../types";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import ReactMarkdown from "react-markdown";
 import { AuthRequired } from "../../molecules/AuthRequired";
+import { useExercise } from "../../hooks/useExercise";
 
 interface Props {
   /** Write the description as child element. */
-  answer?: RegExp;
   slug: string;
 }
 
-export const LatexExercise = ({ slug, answer }: Props) => {
-  const user = useUser();
-  const { data, mutate } = useSWR<ExerciseProblem>(`/problems/${slug}`);
-
+export const LatexExercise = ({ slug }: Props) => {
+  const exercise = useExercise(slug);
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
-  const [solvedAt, setSolvedAt] = useState("");
+  const solved = Boolean(exercise?.submission?.solved_at);
 
-  const submit = async (): Promise<boolean> => {
-    if (!slug) {
-      return true;
-    }
-
-    const response = await fetch(`${env.API_HOST}/problems/${slug}`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("AccessToken")}`,
-      },
-      body: JSON.stringify({ input }),
-    });
-    return response.ok;
-  };
-
-  const handleSubmit = async () => {
-    console.info(`Checking input "${input}" against answer "${answer}"`);
-
-    let correct;
-    if (answer) {
-      if (input.match(answer)) {
-        correct = await submit();
-      }
-    } else {
-      correct = await submit();
-    }
-
-    if (!correct) {
-      setError("Your answer was incorrect, check the spaces.");
-    }
-    user.reload();
-    await mutate();
-  };
+  const handleSubmit = async () => exercise.submit({ input });
 
   useEffect(() => {
-    if (data && data.submission) {
-      setInput(data.submission.data.input);
-      setSolvedAt(data.submission.solved_at);
+    if (exercise && exercise.submission) {
+      setInput(exercise.submission.data.input);
     }
-  }, [data]);
+  }, [exercise]);
 
-  if (!data) {
-    return <AuthRequired message="This exercises requires an account." />;
+  if (!exercise) {
+    return <AuthRequired />;
   }
 
   return (
-    <Problem points={data.points}>
+    <Problem points={exercise.points}>
       <ReactMarkdown
-        children={data.description}
+        children={exercise.description}
         remarkPlugins={[remarkMath]}
         rehypePlugins={[rehypeKatex]}
       />
       <Textarea
-        disabled={solvedAt !== ""}
+        disabled={solved}
         onChange={(value) => {
           setInput(value);
           setError("");
@@ -89,8 +50,8 @@ export const LatexExercise = ({ slug, answer }: Props) => {
         value={input}
       />
       <MathDisplay children={input} block={true} />
-      {solvedAt ? (
-        <SolvedLabel points={data.points} />
+      {solved ? (
+        <SolvedLabel points={exercise.points} />
       ) : (
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
           <Button onClick={handleSubmit}>Submit</Button>

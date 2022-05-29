@@ -1,4 +1,4 @@
-import { Button } from "./atoms/Button";
+import { Button } from "../atoms/Button";
 import { FaGithub } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { Logo } from "./Logo";

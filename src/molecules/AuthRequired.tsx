@@ -5,15 +5,10 @@ const Container = styled.div`
   text-align: center;
 `;
 
-interface Props {
-  message: string;
-}
-
-export const AuthRequired = ({ message }: Props) => {
+export const AuthRequired = () => {
   return (
     <Container>
       <h3>Authentication Required</h3>
-      <p>{message}</p>
     </Container>
   );
 };

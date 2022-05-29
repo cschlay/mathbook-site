@@ -2,7 +2,9 @@ import {Definition} from "../../../components/MathDisplay/Definition";
 import {Example} from "../../../components/MathDisplay/Example";
 import {Problem} from "../../../components/MathDisplay/Problem";
 import {Quoted} from "../../../components/mdx/Quoted";
-import MdxLayout from "../../../components/MdxLayout";
+import MdxLayout from "../../../components/MdxLayout"; import {
+  MultipleChoiceExercise
+} from "../../../organisms/MultipleChoiceExercise";
 
 export const meta = {
   title: "Unions and Intersections"
@@ -68,5 +70,6 @@ _difference_ operation.
 <Problem>
   Implement set data structure, and the basic operations described in this section.
 </Problem>
+
 
 export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>
