@@ -1,77 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Spectral:ital,wght@0,300;1,300&display=swap');
+@import "https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Spectral:ital,wght@0,300;1,300&display=swap";
 
 :root {
-    --color-bg: #faf8f7;
-    --color-error: #fc5757;
-    --color-link: #e34039;
-    --color-sourced: #eeeefa;
-    --color-brand: #1b1364;
-    --color-brand-on: #f0eef8;
-
-    --font-logo: 'Lavishly Yours', cursive;
-    --font-headers: 'Spectral', serif;
-    --font-body: 'Spectral', serif;
+  --color-bg: #faf8f7;
+  --color-error: #fc5757;
+  --color-link: #e34039;
+  --color-sourced: #eeeefa;
+  --color-brand: #1b1364;
+  --color-brand-on: #f0eef8;
+  --font-logo: "Lavishly Yours", cursive;
+  --font-headers: "Spectral", serif;
+  --font-body: "Spectral", serif;
 }
 
 body {
-    background-color: var(--color-bg);
-    font-family: var(--font-headers);
-    line-height: 1.5;
+  background-color: var(--color-bg);
+  font-family: var(--font-headers);
+  line-height: 1.5;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 main {
-    margin: 0 auto;
-    min-height: 75vh;
-    width: 95vw;
+  margin: 0 auto;
+  min-height: 75vh;
+  width: 95vw;
 }
 
 h2 {
-    margin: 4rem 0 1rem 0;
+  margin: 4rem 0 1rem;
 }
 
 p {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 @media screen and (min-width: 800px) {
-    main {
-        width: 80vw;
-    }
+  main {
+    width: 80vw;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    main {
-        width: 60vw;
-    }
+  main {
+    width: 60vw;
+  }
 }
 
 .math {
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 .math[data-block] {
-    display: block;
+  display: block;
 }
 
-.math::-webkit-scrollbar, pre::-webkit-scrollbar {
-    height: 10px;
+.math::-webkit-scrollbar,
+pre::-webkit-scrollbar {
+  height: 10px;
 }
-.math::-webkit-scrollbar-track, pre::-webkit-scrollbar-track {
-    background-color: gray;
+
+.math::-webkit-scrollbar-track,
+pre::-webkit-scrollbar-track {
+  background-color: gray;
 }
-.math::-webkit-scrollbar-thumb, pre::-webkit-scrollbar-thumb {
-    background-color: #545151;
+
+.math::-webkit-scrollbar-thumb,
+pre::-webkit-scrollbar-thumb {
+  background-color: #545151;
 }
 
 .flex-center {
-    display: inline-flex;
-    align-items: center;
+  display: inline-flex;
+  align-items: center;
 }
+
 .flex-center > svg {
-    font-size: 1.5rem;
-    padding: 0 0.25rem;
+  font-size: 1.5rem;
+  padding: 0 0.25rem;
 }
