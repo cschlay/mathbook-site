@@ -1,28 +1,30 @@
+import {
+  CodeExchangeRequest,
+  CodeExchangeResponse,
+} from "app/types/schemas/CodeExchange";
+import { LayoutBase } from "app/components/layouts/LayoutBase";
+import { api } from "app/utils/api";
 import { useEffect } from "react";
-import { LayoutBase } from "../components/layouts/LayoutBase";
-import { env } from "../../env";
+import { useRouter } from "next/router";
 
 const LoginPage = () => {
+  const router = useRouter();
+
   useEffect(() => {
-    const query = new URLSearchParams(location.search);
-    const requestData = {
-      code: query.get("code"),
-    };
+    if (router.query.code) {
+      const request: CodeExchangeRequest = {
+        code: router.query.code as string,
+      };
 
-    fetch(`${env.API_HOST}/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        localStorage.setItem("AccessToken", data.access_token);
-
-        window.open("/", "_self");
-      });
-  }, []);
+      api
+        .post("login", { json: request })
+        .json<CodeExchangeResponse>()
+        .then(({ accessToken }) => {
+          localStorage.setItem("AccessToken", accessToken);
+          return router.push({});
+        });
+    }
+  }, [router.query.code]);
 
   return (
     <LayoutBase>

@@ -1,3 +1,5 @@
+export type Optional<T> = T | undefined;
+
 export interface SectionItem {
   id: string;
   frontmatter: {

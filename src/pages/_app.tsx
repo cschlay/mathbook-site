@@ -1,15 +1,15 @@
 import "katex/dist/katex.min.css";
-import "../../styles/normalize.css";
-import "../../styles/highlight-theme.css";
-import "../../styles/base.css";
-import { env } from "../../env";
+import "styles/normalize.css";
+import "styles/highlight-theme.css";
+import "styles/base.css";
 import { SWRConfig } from "swr";
+import { api } from "app/utils/api";
 
 const App = ({ Component, pageProps }) => {
   return (
     <SWRConfig
       value={{
-        fetcher: swrFetch,
+        fetcher: swrFetcher,
         errorRetryCount: 0,
       }}
     >
@@ -18,24 +18,7 @@ const App = ({ Component, pageProps }) => {
   );
 };
 
-const swrFetch = (url: string, init: object): Promise<unknown> => {
-  const accessToken = localStorage.getItem("AccessToken");
-
-  if (!accessToken) {
-    return Promise.reject(new Error());
-  }
-
-  return fetch(`${env.API_HOST}${url}`, {
-    ...init,
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-    },
-  }).then((res) => {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(new Error());
-  });
-};
+const swrFetcher = (url: string, init: object): Promise<unknown> =>
+  api.get(url.replace(/^(\/)/, ""), init).json();
 
 export default App;
