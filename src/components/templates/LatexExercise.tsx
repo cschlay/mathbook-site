@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Problem } from "../MathDisplay/Problem";
-import { Textarea } from "../atoms/Textarea";
+import { Textarea } from "../../atoms/Textarea";
 import { Button } from "../../atoms/Button";
-import { ErrorMessage } from "../atoms/ErrorMessage";
-import { SolvedLabel } from "../atoms/SolvedLabel";
+import { ErrorMessage } from "../../atoms/ErrorMessage";
+import { SolvedLabel } from "../../atoms/SolvedLabel";
 import { MathDisplay } from "../MathDisplay/MathDisplay";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -20,13 +20,14 @@ export const LatexExercise = ({ slug }: Props) => {
   const exercise = useExercise(slug);
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
-  const solved = Boolean(exercise?.submission?.solved_at);
+  console.log(exercise);
+  const solved = Boolean(exercise?.solvedAt);
 
-  const handleSubmit = async () => exercise.submit({ input });
+  const handleSubmit = async () => exercise.submit({ textInput: input });
 
   useEffect(() => {
     if (exercise && exercise.submission) {
-      setInput(exercise.submission.data.input);
+      setInput(exercise.submission.textInput);
     }
   }, [exercise]);
 

@@ -1,13 +1,24 @@
-import * as React from "react";
+import { Optional } from "app/types";
+import { ReactNode } from "react";
 import styled from "@emotion/styled";
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
   href: string;
-  inTab?: boolean;
+  newTab?: boolean;
 }
 
-const StyledLink = styled.a`
+export const Link = ({ children, href, newTab }: Props) => {
+  const target: Optional<string> = newTab ? "_blank" : undefined;
+
+  return (
+    <Wrapper href={href} target={target} rel="noreferrer">
+      {children}
+    </Wrapper>
+  );
+};
+
+const Wrapper = styled.a`
   color: var(--color-link);
   text-decoration: none;
   &:hover {
@@ -18,13 +29,3 @@ const StyledLink = styled.a`
     color: var(--color-link);
   }
 `;
-
-export const Link = ({ children, href, inTab }: Props): JSX.Element => {
-  const target: string | undefined = inTab ? "_blank" : undefined;
-
-  return (
-    <StyledLink href={href} target={target} rel="noreferrer">
-      {children}
-    </StyledLink>
-  );
-};

@@ -1,6 +1,7 @@
 @import "https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Spectral:ital,wght@0,300;1,300&display=swap";
 
 :root {
+  --border: 1px solid lightgrey;
   --color-bg: #faf8f7;
   --color-error: #fc5757;
   --color-link: #e34039;

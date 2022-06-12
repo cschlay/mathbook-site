@@ -21,7 +21,7 @@ const LoginPage = () => {
         .json<CodeExchangeResponse>()
         .then(({ accessToken }) => {
           localStorage.setItem("AccessToken", accessToken);
-          return router.push({});
+          return router.push("/");
         });
     }
   }, [router.query.code]);

@@ -4,6 +4,18 @@ module.exports = {
     jest: true,
     node: true,
   },
-  extends: ["eslint:recommended", "next/core-web-vitals", "prettier"],
+  extends: ["next/core-web-vitals", "prettier"],
   plugins: ["jest"],
+  rules: {
+    "sort-imports": [
+      "warn",
+      {
+        ignoreCase: false,
+        ignoreDeclarationSort: false,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+        allowSeparatedGroups: false,
+      },
+    ],
+  },
 };

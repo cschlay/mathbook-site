@@ -12,6 +12,7 @@ export const useExercise = (slug: string): HookValue | null => {
   const { data, mutate } = useSWR<ExerciseProblem>(`/problems/${slug}`);
   const [error, setError] = useState("");
 
+  // TODO: Replace with Ky
   const submit = async (solution: unknown): Promise<boolean> => {
     const url = `${env.API_HOST}/problems/${slug}`;
     const accessToken = localStorage.getItem("AccessToken");
@@ -20,6 +21,7 @@ export const useExercise = (slug: string): HookValue | null => {
       method: "POST",
       headers: {
         Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(solution),
     });

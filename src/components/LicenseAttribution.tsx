@@ -14,7 +14,7 @@ export const LicenseAttribution = (): JSX.Element => {
     <Container>
       We use open source and public domain math textbooks as base material. The
       included texts are from{" "}
-      <Link href="https://openlogicproject.org/about/" inTab={true}>
+      <Link href="https://openlogicproject.org/about/" newTab={true}>
         The Open Logic Project
       </Link>{" "}
       (CC BY 4.0). The material has been modified, combined, removed, or
