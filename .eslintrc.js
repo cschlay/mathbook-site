@@ -1,12 +1,7 @@
 module.exports = {
-  parser: "@typescript-eslint/parser",
   env: {
     browser: true,
     node: true,
   },
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@next/next/recommended",
-  ],
+  extends: ["eslint:recommended", "next/core-web-vitals", "prettier"],
 };
