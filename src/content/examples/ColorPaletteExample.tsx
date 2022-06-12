@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import { MathDisplay } from "../MathDisplay/MathDisplay";
 import { Fragment } from "react";
+import { MathDisplay } from "app/atoms/MathDisplay";
+import styled from "@emotion/styled";
 
 const Container = styled.div`
   display: flex;
@@ -45,14 +45,14 @@ const Color = styled.div<{ code: string }>`
 const Palette = ({ id, colors }: PaletteProps) => {
   return (
     <StyledPalette>
-      <MathDisplay>{`S_${id} = \\{`}</MathDisplay>
+      <MathDisplay value={`S_${id} = \\{`} />
       {colors.map((color, i) => (
         <Fragment key={`${id}-${color}`}>
           <Color code={color}>{color}</Color>
           {i < colors.length - 1 && ","}
         </Fragment>
       ))}
-      <MathDisplay>{`\\}`}</MathDisplay>
+      <MathDisplay value="\}" />
     </StyledPalette>
   );
 };

@@ -1,18 +1,18 @@
-import {Definition} from "../../../components/MathDisplay/Definition";
-import {Example} from "../../../components/MathDisplay/Example";
-import {Quoted} from "../../../components/mdx/Quoted";
-import MdxLayout from "../../../components/MdxLayout";
+import {Definition} from "../../../molecules/Definition";
+import {Example} from "../../../molecules/Example";
+import {MdxQuote} from "../../../atoms/MdxQuote";
+import MdxLayout from "../../../templates/MdxLayout";
 
 export const meta = {
   title: "Relations as Sets"
 }
 
-<Quoted>
+<MdxQuote>
   <Definition name="Binary relation">
     A _binary relation_ on a set $A$ is a subset of $A^2 = A \times A$.
     If $R \subseteq A^2$ is a binary relation on $A$ and $x, y \in A$, we write $xRy$ for $(x, y) \in R$.
   </Definition>
-</Quoted>
+</MdxQuote>
 
 The relation is indeed a rule that defines the set $R$ of pairs.
 The most basic relation is _identity relation_ where elements relate themselves $(x, x) \in R$ when $x \in A$, denoted as $\text{Id}_A$.
@@ -31,7 +31,7 @@ If we were to define three columns, we would need to define relation of relation
 
 ## Special Properties of Relations
 
-<Quoted>
+<MdxQuote>
 
   Some kinds of relations turn out to be so common that they have been given special names.
   To get at exactly how these relations are similar, and how they differ,
@@ -50,7 +50,7 @@ If we were to define three columns, we would need to define relation of relation
     A relation $R \subseteq A^2$ is _symmetric_ iff, whenever $xRy$, then also $yRx$.
   </Definition>
 
-</Quoted>
+</MdxQuote>
 
 The _anti-symmetric_ relation is the opposite of symmetric relation, where the reverse is never true except when $x = y$.
 However, the relation may not be reflexive.

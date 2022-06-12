@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { EnvironmentContainer } from "./EnvironmentContainer";
+import { MathEnvironment } from "../atoms/MathEnvironment";
 
 interface Props {
   children: ReactNode;
@@ -8,8 +8,8 @@ interface Props {
 
 export const Problem = ({ children, points }: Props) => {
   return (
-    <EnvironmentContainer type="Problem" summary={points && `${points} points`}>
+    <MathEnvironment type="Problem" summary={points && `${points} points`}>
       {children}
-    </EnvironmentContainer>
+    </MathEnvironment>
   );
 };

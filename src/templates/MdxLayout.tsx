@@ -1,5 +1,5 @@
-import { LayoutBase } from "./layouts/LayoutBase";
-import { TitleHeader } from "./TitleHeader";
+import { LayoutBase } from "../organisms/LayoutBase";
+import { TitleHeader } from "../atoms/TitleHeader";
 import { ReactNode } from "react";
 import { MdxFrontmatter } from "../types";
 import Head from "next/head";

@@ -1,16 +1,16 @@
-import {ColorPaletteExample} from "../../../components/examples/ColorPaletteExample";
-import {Definition} from "../../../components/MathDisplay/Definition";
-import {Example} from "../../../components/MathDisplay/Example";
-import {LatexExercise} from "../../../components/templates/LatexExercise";
-import {Problem} from "../../../components/MathDisplay/Problem";
-import {Quoted} from "../../../components/mdx/Quoted";
-import MdxLayout from "../../../components/MdxLayout";
+import {ColorPaletteExample} from "../../../content/examples/ColorPaletteExample";
+import {Definition} from "../../../molecules/Definition";
+import {Example} from "../../../molecules/Example";
+import {LatexExercise} from "../../../organisms/LatexExercise";
+import {Problem} from "../../../molecules/Problem";
+import {MdxQuote} from "../../../atoms/MdxQuote";
+import MdxLayout from "../../../templates/MdxLayout";
 
 export const meta = {
   title: "Extensionality"
 }
 
-<Quoted>
+<MdxQuote>
 
   A _set_ is a collection of objects.
   The objects in the set are called _elements_ of the set.
@@ -37,7 +37,7 @@ export const meta = {
     S = \{ a, a, b \} = \{ a, b \} = \{ b, a \}
   $$
 
-</Quoted>
+</MdxQuote>
 
 We usually don't write out duplicate elements since they have no meaning as extensionality reduces them to same set.
 In $\LaTeX$ the symbols related to sets are:
@@ -75,17 +75,17 @@ print(contains_dairy({ "flour", "milk", "butter" }))
 # True
 ```
 
-<Quoted>
+<MdxQuote>
   <Problem>
     Prove that there is at most one empty set.
   </Problem>
-</Quoted>
+</MdxQuote>
 
 <LatexExercise answer={/S\s*=\s*\\{\s*1,\s*2,\s*4,\s*8\s*\\}/g} slug="set-notation" />
 
 ## Set Builder
 
-<Quoted>
+<MdxQuote>
 
   Frequently, we’ll specify a set by some property that its elements share.
   We’ll use the following shorthand notation for that:
@@ -98,7 +98,7 @@ print(contains_dairy({ "flour", "milk", "butter" }))
   the elements of the set. The property can be thought as a function that generate the elements.
   The symbol $\mid$ is written as `\mid`.
 
-</Quoted>
+</MdxQuote>
 
 <Example name="Generating serving sizes">
 

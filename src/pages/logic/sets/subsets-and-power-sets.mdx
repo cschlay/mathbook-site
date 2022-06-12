@@ -1,15 +1,15 @@
-import {Definition} from "../../../components/MathDisplay/Definition";
-import {Example} from "../../../components/MathDisplay/Example";
-import {Problem} from "../../../components/MathDisplay/Problem";
-import {Proposition} from "../../../components/MathDisplay/Proposition";
-import {Quoted} from "../../../components/mdx/Quoted";
-import MdxLayout from "../../../components/MdxLayout";
+import {Definition} from "../../../molecules/Definition";
+import {Example} from "../../../molecules/Example";
+import {Problem} from "../../../molecules/Problem";
+import {Proposition} from "../../../molecules/Proposition";
+import {MdxQuote} from "../../../atoms/MdxQuote";
+import MdxLayout from "../../../templates/MdxLayout";
 
 export const meta = {
   title: "Subsets and Power Sets"
 }
 
-<Quoted source="olp">
+<MdxQuote source="olp">
   We will often want to compare sets. One kind of comparison is: _everything in one set is in the other (set) too_.
   This situation is sufficiently important for us to introduce some new notation.
 
@@ -20,18 +20,18 @@ export const meta = {
     we write $A \subset B$,
     and say that $A$ is a _proper subset_ of $B$.
   </Definition>
-</Quoted>
+</MdxQuote>
 
 The notation $\subset$ is used because they are similar to equality operators $\leq$ and $<$. You may also see $\subsetneq$ in other literature.
 The corresponding latex symbols are `\subset`, `\subseteq`, and `\subsetneq`.
 
-<Quoted source="olp">
+<MdxQuote source="olp">
   <Example name="Basics">
     Every set is a subset of itself, and $\emptyset$ is a subset of every set.
     The set of even numbers is a subset of the set of natural numbers. Also $\{a, b\} \subseteq \{a, b, c\}$.
     But $\{a, b, e\}$ is not a subset of $\{a, b, c\}$.
   </Example>
-</Quoted>
+</MdxQuote>
 
 Applying subsets is useful for checking validity of something e.g. ensuring that a customer have chosen appropriate combination of items.
 The chefs check that they have chosen ingredients from available sets before planning the servings.
@@ -53,7 +53,7 @@ print(kebab_pizza.issubset(pizza_toppings))
 # True
 ```
 
-<Quoted>
+<MdxQuote>
 <Proposition>
   $A = B$ iff both $A \subseteq B$ and $B \subseteq A$.
 </Proposition>
@@ -63,7 +63,7 @@ print(kebab_pizza.issubset(pizza_toppings))
     \wp(A) = \{ B \mid B \subseteq A \}.
   $$
 </Definition>
-</Quoted>
+</MdxQuote>
 
 The symbol <tex value="\wp"/> can be written `\wp` in TeX (perhaps short for _Weierstrass p-function_).
 You may also encounter different power set notations that uses different styles of "p" such as $P(A)$.
@@ -77,7 +77,7 @@ You may also encounter different power set notations that uses different styles 
   $$
 </Example>
 
-<Quoted>
+<MdxQuote>
   <Problem>
     List all subsets of $\{ a, b, c, d\}$.
   </Problem>
@@ -85,6 +85,6 @@ You may also encounter different power set notations that uses different styles 
   <Problem>
     Show that if $A$ has $n$ elements, then $\wp(A)$ has $2^n$ elements.
   </Problem>
-</Quoted>
+</MdxQuote>
 
 export default ({ children }) => <MdxLayout meta={meta}>{children}</MdxLayout>

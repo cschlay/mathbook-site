@@ -1,7 +1,7 @@
 import { Button } from "../atoms/Button";
 import { FaGithub } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
-import { Logo } from "./Logo";
+import { Logo } from "../atoms/Logo";
 import { env } from "../../env";
 import { useUser } from "../hooks/useUser";
 import styled from "@emotion/styled";

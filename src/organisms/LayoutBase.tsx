@@ -1,6 +1,6 @@
+import { Footer } from "../molecules/Footer";
+import { Header } from "../molecules/Header";
 import { ReactNode } from "react";
-import { Footer } from "../Footer";
-import { Header } from "../Header";
 
 interface Props {
   children: ReactNode;

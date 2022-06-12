@@ -1,6 +1,6 @@
-import { LayoutBase } from "../components/layouts/LayoutBase";
+import { LayoutBase } from "../organisms/LayoutBase";
 import { TableOfContents } from "../molecules/TableOfContents";
-import { TitleHeader } from "../components/TitleHeader";
+import { TitleHeader } from "../atoms/TitleHeader";
 import Head from "next/head";
 
 const IndexPage = () => {

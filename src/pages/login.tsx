@@ -2,7 +2,7 @@ import {
   CodeExchangeRequest,
   CodeExchangeResponse,
 } from "app/types/schemas/CodeExchange";
-import { LayoutBase } from "app/components/layouts/LayoutBase";
+import { LayoutBase } from "app/organisms/LayoutBase";
 import { api } from "app/utils/api";
 import { useEffect } from "react";
 import { useRouter } from "next/router";

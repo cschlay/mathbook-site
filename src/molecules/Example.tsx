@@ -1,5 +1,5 @@
 import * as React from "react";
-import { EnvironmentContainer } from "./EnvironmentContainer";
+import { MathEnvironment } from "../atoms/MathEnvironment";
 
 interface Props {
   children: string;
@@ -8,8 +8,8 @@ interface Props {
 
 export const Example = ({ children, name }: Props) => {
   return (
-    <EnvironmentContainer type="Example" summary={name}>
+    <MathEnvironment type="Example" summary={name}>
       {children}
-    </EnvironmentContainer>
+    </MathEnvironment>
   );
 };

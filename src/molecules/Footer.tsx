@@ -1,4 +1,3 @@
-import * as React from "react";
 import { LicenseAttribution } from "./LicenseAttribution";
 import { Link } from "../atoms/Link";
 import styled from "@emotion/styled";
@@ -15,7 +14,7 @@ const StyledFooter = styled.footer`
   text-align: center;
 `;
 
-export const Footer = (): JSX.Element => {
+export const Footer = () => {
   return (
     <StyledFooter>
       <LicenseAttribution />

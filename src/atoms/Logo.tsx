@@ -15,7 +15,6 @@ export const Logo = () => {
   return (
     <Link href="/">
       <a>
-        {" "}
         <Container>Mathbook Project</Container>
       </a>
     </Link>

@@ -1,8 +1,8 @@
-import {Definition} from "../../../components/MathDisplay/Definition";
-import {Example} from "../../../components/MathDisplay/Example";
-import {Problem} from "../../../components/MathDisplay/Problem";
-import {Quoted} from "../../../components/mdx/Quoted";
-import MdxLayout from "../../../components/MdxLayout"; import {
+import {Definition} from "../../../molecules/Definition";
+import {Example} from "../../../molecules/Example";
+import {Problem} from "../../../molecules/Problem";
+import {MdxQuote} from "../../../atoms/MdxQuote";
+import MdxLayout from "../../../templates/MdxLayout"; import {
   MultipleChoiceExercise
 } from "../../../organisms/MultipleChoiceExercise";
 
@@ -13,14 +13,14 @@ export const meta = {
 The set generator notation $\{ x \mid f(x) \}$ creates new set.
 Although the notation only generate sets, it is powerful enough define basic set operations: _union_, _intersection_, and _difference_.
 
-<Quoted>
+<MdxQuote>
 <Definition name="Union">
   The _union_ of two sets $A$ and $B$ is the set of all things which are elements of $A$, $B$, or both.
   $$
     A \cup B = \{ x \mid x \in A \text{ or } x \in B \}
   $$
 </Definition>
-</Quoted>
+</MdxQuote>
 
 The union operator is useful for combining two sets of things into one such as films seen by two persons can be represented as sets $A$ and $B$.
 Now that if they are to go cinema, they can create a new set $C$ to determine the films either of them has seen.
@@ -40,7 +40,7 @@ Now that if they are to go cinema, they can create a new set $C$ to determine th
   $$
 </Example>
 
-<Quoted>
+<MdxQuote>
 We can also consider a "dual" operation to union. This is the operation
 that forms the set of all elements that are elements of $A$ and are also elements
 of $B$. This operation is called _intersection_. Two sets are called _disjoint_ if their intersection is empty.
@@ -50,7 +50,7 @@ of $B$. This operation is called _intersection_. Two sets are called _disjoint_ 
     A \cap B = \{ x \mid x \in A \text{ and } x \in B\}
   $$
 </Definition>
-</Quoted>
+</MdxQuote>
 
 A practical use is finding common elements of things, e.g. in dating finding common interests and expectations is important.
 You may discuss food you both like or activities you would enjoy doing together.
@@ -58,14 +58,14 @@ A way to represent this situation is to define an intersection of interests $C =
 If there is a set of things $D$ you cannot do due to life situation e.g. having children, you can define a set of things you can do using
 _difference_ operation.
 
-<Quoted>
+<MdxQuote>
 <Definition name="Difference">
   The _set difference_ $A \setminus B$ is the set of all elements of $A$ which are not also element of $B$, i.e,
   $$
     A \setminus B = \{ x \mid x \in A \text{ and } x \notin B \}.
   $$
 </Definition>
-</Quoted>
+</MdxQuote>
 
 <Problem>
   Implement set data structure, and the basic operations described in this section.

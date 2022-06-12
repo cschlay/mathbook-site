@@ -1,15 +1,16 @@
+/* eslint-disable react/no-children-prop */
 import { useEffect, useState } from "react";
-import { Problem } from "../MathDisplay/Problem";
-import { Textarea } from "../../atoms/Textarea";
-import { Button } from "../../atoms/Button";
-import { ErrorMessage } from "../../atoms/ErrorMessage";
-import { SolvedLabel } from "../../atoms/SolvedLabel";
-import { MathDisplay } from "../MathDisplay/MathDisplay";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
+import { AuthRequired } from "../molecules/AuthRequired";
+import { Button } from "../atoms/Button";
+import { ErrorMessage } from "../atoms/ErrorMessage";
+import { MathDisplay } from "../atoms/MathDisplay";
+import { Problem } from "../molecules/Problem";
 import ReactMarkdown from "react-markdown";
-import { AuthRequired } from "../../molecules/AuthRequired";
-import { useExercise } from "../../hooks/useExercise";
+import { SolvedLabel } from "../atoms/SolvedLabel";
+import { Textarea } from "../atoms/Textarea";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
+import { useExercise } from "../hooks/useExercise";
 
 interface Props {
   /** Write the description as child element. */
@@ -18,10 +19,9 @@ interface Props {
 
 export const LatexExercise = ({ slug }: Props) => {
   const exercise = useExercise(slug);
+  const solved = Boolean(exercise?.solvedAt);
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
-  console.log(exercise);
-  const solved = Boolean(exercise?.solvedAt);
 
   const handleSubmit = async () => exercise.submit({ textInput: input });
 
@@ -48,9 +48,10 @@ export const LatexExercise = ({ slug }: Props) => {
           setInput(value);
           setError("");
         }}
+        size="sm"
         value={input}
       />
-      <MathDisplay children={input} block={true} />
+      <MathDisplay value={input} block={true} />
       {solved ? (
         <SolvedLabel points={exercise.points} />
       ) : (
