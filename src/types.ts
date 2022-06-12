@@ -1,19 +1,5 @@
 export type Optional<T> = T | undefined;
-
-export interface SectionItem {
-  id: string;
-  frontmatter: {
-    title: string;
-    sources: string[];
-  };
-  slug: string;
-}
-
-export interface ChapterItem {
-  index: number;
-  items: SectionItem[];
-  name: string;
-}
+export type CssSizes = "xs" | "sm" | "md" | "lg" | "xl";
 
 export interface User {
   email: string;

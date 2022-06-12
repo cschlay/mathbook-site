@@ -1,8 +1,10 @@
 .next/
-node_modules/
-
 coverage/
+node_modules/
 sonarlint/
+
+tsconfig.tsbuildinfo
+
 *.log
 .idea/
 .env

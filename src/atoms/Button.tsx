@@ -1,12 +1,14 @@
 import { ReactNode } from "react";
+import { CssSizes } from "app/types";
 import styled from "@emotion/styled";
 
 interface BaseProps {
   onClick?: () => void;
   type?: "button" | "submit";
+  size?: CssSizes;
 }
 
-interface ButtonProps extends BaseProps {
+interface NormalButtonProps extends BaseProps {
   children: ReactNode;
   onClick: () => void;
 }
@@ -16,25 +18,31 @@ interface SubmitButtonProps extends BaseProps {
   type: "submit";
 }
 
-type Props = ButtonProps | SubmitButtonProps;
+export type Props = NormalButtonProps | SubmitButtonProps;
 
-export const Button = ({ children, onClick, type = "button" }: Props) => {
+export const Button = ({
+  children,
+  onClick,
+  size = "md",
+  type = "button",
+}: Props) => {
   return (
-    <Container type={type} onClick={onClick}>
+    <Wrapper onClick={onClick} size={size} type={type}>
       {children}
-    </Container>
+    </Wrapper>
   );
 };
 
-const Container = styled.button`
+const Wrapper = styled.button<Props>`
   display: flex;
   align-items: center;
   gap: 1rem;
   background: var(--color-brand);
-  color: var(--color-brand-on);
+  color: var(--color-on-brand);
   border: none;
-  border-radius: 0.25rem;
-  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  padding: ${({ size }) =>
+    `calc(var(--space-${size}) / 2) var(--space-${size})`};
 
   &:hover {
     filter: brightness(110%);
