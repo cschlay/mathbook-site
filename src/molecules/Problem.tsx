@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
 import { MathEnvironment } from "../atoms/MathEnvironment";
+import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;

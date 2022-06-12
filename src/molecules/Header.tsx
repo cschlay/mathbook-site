@@ -3,9 +3,9 @@ import { FaGithub } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { Logo } from "../atoms/Logo";
 import { env } from "../../env";
-import { useUser } from "../hooks/useUser";
 import styled from "@emotion/styled";
 import { useTablet } from "../hooks/useTablet";
+import { useUser } from "../hooks/useUser";
 
 const Container = styled.header`
   display: flex;

@@ -1,7 +1,7 @@
 import { Optional } from "app/types";
 import { env } from "env";
-import ky from "ky";
 import { isBrowser } from "app/utils/isBrowser";
+import ky from "ky";
 
 const getAuthorizationHeader = (): Optional<string> => {
   if (isBrowser()) {

@@ -24,7 +24,7 @@ const LoginPage = () => {
           return router.push("/");
         });
     }
-  }, [router.query.code]);
+  }, [router, router.query.code]);
 
   return (
     <LayoutBase>

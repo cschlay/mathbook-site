@@ -1,7 +1,7 @@
+import Head from "next/head";
 import { LayoutBase } from "../organisms/LayoutBase";
 import { TableOfContents } from "../molecules/TableOfContents";
 import { TitleHeader } from "../atoms/TitleHeader";
-import Head from "next/head";
 
 const IndexPage = () => {
   return (

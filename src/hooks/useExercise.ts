@@ -1,7 +1,7 @@
 import { ExerciseProblem } from "../types";
 import { env } from "../../env";
-import { useState } from "react";
 import useSWR from "swr";
+import { useState } from "react";
 
 interface HookValue extends ExerciseProblem {
   error: string;

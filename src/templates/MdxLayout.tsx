@@ -1,8 +1,8 @@
-import { LayoutBase } from "../organisms/LayoutBase";
-import { TitleHeader } from "../atoms/TitleHeader";
-import { ReactNode } from "react";
-import { MdxFrontmatter } from "../types";
 import Head from "next/head";
+import { LayoutBase } from "../organisms/LayoutBase";
+import { MdxFrontmatter } from "../types";
+import { ReactNode } from "react";
+import { TitleHeader } from "../atoms/TitleHeader";
 
 interface Props {
   children: ReactNode;

@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
 import { CssSizes } from "app/types";
+import { ReactNode } from "react";
 import styled from "@emotion/styled";
 
 interface BaseProps {

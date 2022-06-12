@@ -1,5 +1,5 @@
+import { User } from "app/types";
 import useSWR from "swr";
-import { User } from "../types";
 
 interface Value {
   user?: User;
